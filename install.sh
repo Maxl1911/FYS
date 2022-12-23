@@ -27,8 +27,8 @@ fi
 
 echo "Het maken van de vereiste users"
 
-$username = corendon 
-$password = corendon
+$username="corendon" 
+$password="corendon"
 echo $username:$password | chpasswd
 echo "De user $username is aangemaakt"
 
