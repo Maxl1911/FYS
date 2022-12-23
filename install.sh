@@ -59,20 +59,10 @@ cp -R fyssite /var/www/
 
 apt -y install mariadb-server
 systemctl start mariadb.service
-mysql_secure_installation
-echo \n
-echo "N"
-echo "N"
-echo "Y"
-echo "Y"
-echo "Y"
-echo "Y"
+echo "\n N \n N \N y\n y\n y\n y\n" mysql_secure_installation
 
 
-mariadb
-GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-exit
+mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 #########################################
 #               Pyton Venv              #
 #########################################
