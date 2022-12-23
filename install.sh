@@ -27,8 +27,8 @@ fi
 
 echo "Het maken van de vereiste users"
 
-$username="corendon" 
-$password="corendon"
+username="corendon" 
+password="corendon"
 sudo useradd -p $(openssl passwd -1 $password) $username
 echo "De user $username is aangemaakt"
 
