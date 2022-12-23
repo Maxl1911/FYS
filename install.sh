@@ -59,7 +59,16 @@ cp -R fyssite /var/www/
 
 apt -y install mariadb-server
 systemctl start mariadb.service
-echo "N N N y y y y" | mysql_secure_installation
+
+mysql_secure_installation << EOF
+
+`#Enter current password for root (enter for none):`
+`#Change the root password? [Y/n]` n
+`#Remove anonymous users? [Y/n]` y
+`#Disallow root login remotely? [Y/n]` y
+`#Remove test database and access to it? [Y/n]` y
+`#Reload privilege tables now? [Y/n]` y
+EOF
 
 
 mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION; FLUSH PRIVILEGES;"
