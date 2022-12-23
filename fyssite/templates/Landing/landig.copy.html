@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>VYS site</title>
+    <link rel="stylesheet" href="../../static/nav.css">
+    <link rel="stylesheet" href="../../static/main.css">
+    <script src="js/loggedin.js"></script>
+    <script src="js/nav.js"></script>
+</head>
+<!-- On page laod call the checklogin function -->
+<body id="landing" onload="return checklogin()">
+<!-- Side nav bar -->
+    <div id="mysidenav" class=sidenav>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Onclick call the closenav function  -->
+        <a class="disabled" href="landig.html">Home</a>
+        <a href="index.html">Multimedia</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer;color: rgb(182, 178, 178)" onclick="openNav()">&#9776; </span>  <!-- Onclick call the opennav function  -->
+    <div class="center">
+        <h1 id="welkom_header">Join the world of flight<br> and brighten your horyzon</h1>
+        <a class="button" href="index.html">Join</a>
+
+    </div>
+    <div id="footer">
+        Copyright &copy; Max Luiten </div>
+</div> 
+</body>
+</html>

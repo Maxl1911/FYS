@@ -1,0 +1,24 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>VYS site</title>
+    <link rel="stylesheet" href="../../static/nav.css">
+    <link rel="stylesheet" href="../../static/main.css">
+    <script src="../../static/js/nav.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<!-- On page laod call the checklogin function -->
+<!-- Side nav bar -->
+    <div id="mysidenav" class=sidenav>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Onclick call the closenav function  -->
+        <a {% if request.path=="/landing"%} class="disabled" {% endif %} href="/landing">Home</a>
+        <a {% if request.path=="/"%} class="disabled" {% endif %} href="/">Multimedia</a>
+        <a href="{{ url_for('logout') }}" id="footer_nav">Log Out</a> <!-- logout button -->
+
+    </div>
+    <span style="font-size:30px;cursor:pointer;color: rgb(0, 0, 0)" onclick="openNav()">&#9776; </span>  <!-- Onclick call the opennav function  -->
+    <body id="landing">
+        {% block content %}{% endblock %}
+    </body>

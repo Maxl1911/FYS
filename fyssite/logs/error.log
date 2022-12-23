@@ -1,0 +1,1233 @@
+[Fri Oct 21 10:41:38.590387 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678] [2022-10-21 10:41:38,585] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:41:38.590579 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678] Traceback (most recent call last):
+[Fri Oct 21 10:41:38.590603 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:41:38.590624 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     response = self.full_dispatch_request()
+[Fri Oct 21 10:41:38.590644 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:41:38.590804 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:41:38.590823 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:41:38.590844 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     rv = self.dispatch_request()
+[Fri Oct 21 10:41:38.590863 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:41:38.590883 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:41:38.590902 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/var/www/fyssite/__init__.py", line 53, in login
+[Fri Oct 21 10:41:38.590921 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     return render_template ('Login/login.html')
+[Fri Oct 21 10:41:38.590940 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:41:38.590960 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:41:38.590980 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:41:38.590999 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:41:38.591019 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:41:38.591038 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     return self._load_template(name, globals)
+[Fri Oct 21 10:41:38.591058 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:41:38.591077 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:41:38.591097 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:41:38.591142 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:41:38.591162 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:41:38.591182 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:41:38.591201 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:41:38.591221 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678]     raise TemplateNotFound(template)
+[Fri Oct 21 10:41:38.591240 2022] [wsgi:error] [pid 15009:tid 281473114017984] [remote 192.168.137.1:1678] jinja2.exceptions.TemplateNotFound: Login/login.html
+[Fri Oct 21 10:45:31.774898 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713] [2022-10-21 10:45:31,772] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:45:31.775036 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713] Traceback (most recent call last):
+[Fri Oct 21 10:45:31.775059 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:45:31.775081 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]     response = self.full_dispatch_request()
+[Fri Oct 21 10:45:31.775100 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+[Fri Oct 21 10:45:31.775121 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]     return self.finalize_request(rv)
+[Fri Oct 21 10:45:31.775140 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+[Fri Oct 21 10:45:31.775160 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]     response = self.make_response(rv)
+[Fri Oct 21 10:45:31.775179 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+[Fri Oct 21 10:45:31.775199 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713]     raise TypeError(
+[Fri Oct 21 10:45:31.775218 2022] [wsgi:error] [pid 15103:tid 281473524666560] [remote 192.168.137.1:1713] TypeError: The view function for 'login' did not return a valid response. The function either returned None or ended without a return statement.
+[Fri Oct 21 10:46:29.815204 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715] [2022-10-21 10:46:29,812] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:46:29.815350 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715] Traceback (most recent call last):
+[Fri Oct 21 10:46:29.815373 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:46:29.815394 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]     response = self.full_dispatch_request()
+[Fri Oct 21 10:46:29.815414 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+[Fri Oct 21 10:46:29.815474 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]     return self.finalize_request(rv)
+[Fri Oct 21 10:46:29.815494 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+[Fri Oct 21 10:46:29.815514 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]     response = self.make_response(rv)
+[Fri Oct 21 10:46:29.815533 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+[Fri Oct 21 10:46:29.815553 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715]     raise TypeError(
+[Fri Oct 21 10:46:29.815572 2022] [wsgi:error] [pid 15189:tid 281473472762048] [remote 192.168.137.1:1715] TypeError: The view function for 'login' did not return a valid response. The function either returned None or ended without a return statement.
+[Fri Oct 21 10:48:25.029581 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729] mod_wsgi (pid=15270): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Fri Oct 21 10:48:25.029791 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729] mod_wsgi (pid=15270): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Fri Oct 21 10:48:25.037928 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729] Traceback (most recent call last):
+[Fri Oct 21 10:48:25.038070 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Fri Oct 21 10:48:25.038096 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729]     from __init__ import create_app
+[Fri Oct 21 10:48:25.038147 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729]   File "/var/www/fyssite/__init__.py", line 53
+[Fri Oct 21 10:48:25.038190 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729]     \treturn render_template ('Login/login.html')
+[Fri Oct 21 10:48:25.038240 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729]     ^
+[Fri Oct 21 10:48:25.038276 2022] [wsgi:error] [pid 15270:tid 281473762889920] [remote 192.168.137.1:1729] TabError: inconsistent use of tabs and spaces in indentation
+[Fri Oct 21 10:49:30.161667 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732] mod_wsgi (pid=15356): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Fri Oct 21 10:49:30.161874 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732] mod_wsgi (pid=15356): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Fri Oct 21 10:49:30.170046 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732] Traceback (most recent call last):
+[Fri Oct 21 10:49:30.170170 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Fri Oct 21 10:49:30.170196 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732]     from __init__ import create_app
+[Fri Oct 21 10:49:30.170243 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732]   File "/var/www/fyssite/__init__.py", line 51
+[Fri Oct 21 10:49:30.170283 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732]     return redirect("/login"
+[Fri Oct 21 10:49:30.170340 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732]                    ^
+[Fri Oct 21 10:49:30.170375 2022] [wsgi:error] [pid 15356:tid 281473510707392] [remote 192.168.137.1:1732] SyntaxError: '(' was never closed
+[Fri Oct 21 10:50:32.521122 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733] [2022-10-21 10:50:32,515] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:50:32.521304 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733] Traceback (most recent call last):
+[Fri Oct 21 10:50:32.521327 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:50:32.521349 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     response = self.full_dispatch_request()
+[Fri Oct 21 10:50:32.521368 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:50:32.521388 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:50:32.521408 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:50:32.521428 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     rv = self.dispatch_request()
+[Fri Oct 21 10:50:32.521447 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:50:32.521466 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:50:32.521486 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Oct 21 10:50:32.521505 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     return render_template ('Login/login.html')
+[Fri Oct 21 10:50:32.521524 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:50:32.521543 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:50:32.521563 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:50:32.521582 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:50:32.521602 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:50:32.521621 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     return self._load_template(name, globals)
+[Fri Oct 21 10:50:32.521641 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:50:32.521660 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:50:32.521679 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:50:32.521699 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:50:32.521740 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:50:32.521761 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:50:32.521780 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:50:32.521800 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733]     raise TemplateNotFound(template)
+[Fri Oct 21 10:50:32.521819 2022] [wsgi:error] [pid 15443:tid 281473411223744] [remote 192.168.137.1:1733] jinja2.exceptions.TemplateNotFound: Login/login.html
+[Fri Oct 21 10:52:37.228771 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765] [2022-10-21 10:52:37,223] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:52:37.228908 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765] Traceback (most recent call last):
+[Fri Oct 21 10:52:37.228931 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:52:37.228952 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     response = self.full_dispatch_request()
+[Fri Oct 21 10:52:37.228972 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:52:37.228992 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:52:37.229012 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:52:37.229032 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     rv = self.dispatch_request()
+[Fri Oct 21 10:52:37.229052 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:52:37.229072 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:52:37.229091 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Oct 21 10:52:37.229111 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     return render_template ('Login/login.html')
+[Fri Oct 21 10:52:37.229130 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:52:37.229150 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:52:37.229170 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:52:37.229190 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:52:37.229250 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:52:37.229271 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     return self._load_template(name, globals)
+[Fri Oct 21 10:52:37.229291 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:52:37.229311 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:52:37.229331 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:52:37.229351 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:52:37.229370 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:52:37.229390 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:52:37.229410 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:52:37.229430 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765]     raise TemplateNotFound(template)
+[Fri Oct 21 10:52:37.229449 2022] [wsgi:error] [pid 15551:tid 281473419284672] [remote 192.168.137.1:1765] jinja2.exceptions.TemplateNotFound: Login/login.html
+[Fri Oct 21 10:53:44.189659 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778] [2022-10-21 10:53:44,184] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:53:44.189813 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778] Traceback (most recent call last):
+[Fri Oct 21 10:53:44.189837 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:53:44.189858 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     response = self.full_dispatch_request()
+[Fri Oct 21 10:53:44.189877 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:53:44.189897 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:53:44.189917 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:53:44.189937 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     rv = self.dispatch_request()
+[Fri Oct 21 10:53:44.189956 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:53:44.189975 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:53:44.190035 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Oct 21 10:53:44.190056 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     return render_template ('login/login.html')
+[Fri Oct 21 10:53:44.190075 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:53:44.190095 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:53:44.190114 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:53:44.190134 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:53:44.190153 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:53:44.190173 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     return self._load_template(name, globals)
+[Fri Oct 21 10:53:44.190192 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:53:44.190211 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:53:44.190231 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:53:44.190250 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:53:44.190269 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:53:44.190289 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:53:44.190308 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:53:44.190328 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778]     raise TemplateNotFound(template)
+[Fri Oct 21 10:53:44.190346 2022] [wsgi:error] [pid 15634:tid 281473010143424] [remote 192.168.137.1:1778] jinja2.exceptions.TemplateNotFound: login/login.html
+[Fri Oct 21 10:55:19.578487 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811] [2022-10-21 10:55:19,573] ERROR in app: Exception on /login [GET]
+[Fri Oct 21 10:55:19.578623 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811] Traceback (most recent call last):
+[Fri Oct 21 10:55:19.578718 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:55:19.578747 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     response = self.full_dispatch_request()
+[Fri Oct 21 10:55:19.578768 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:55:19.578827 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:55:19.578848 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:55:19.578868 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     rv = self.dispatch_request()
+[Fri Oct 21 10:55:19.578887 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:55:19.578907 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:55:19.578926 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Oct 21 10:55:19.578945 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     return render_template ('login/login.html')
+[Fri Oct 21 10:55:19.578965 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:55:19.578984 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:55:19.579004 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:55:19.579024 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:55:19.579043 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:55:19.579063 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     return self._load_template(name, globals)
+[Fri Oct 21 10:55:19.579082 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:55:19.579102 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:55:19.579121 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:55:19.579140 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:55:19.579160 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:55:19.579179 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:55:19.579199 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:55:19.579240 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811]     raise TemplateNotFound(template)
+[Fri Oct 21 10:55:19.579260 2022] [wsgi:error] [pid 15737:tid 281473772785856] [remote 192.168.137.1:1811] jinja2.exceptions.TemplateNotFound: login/login.html
+[Fri Oct 21 10:58:28.056880 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826] [2022-10-21 10:58:28,050] ERROR in app: Exception on /landing [GET]
+[Fri Oct 21 10:58:28.057066 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826] Traceback (most recent call last):
+[Fri Oct 21 10:58:28.057104 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Oct 21 10:58:28.057139 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     response = self.full_dispatch_request()
+[Fri Oct 21 10:58:28.057171 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Oct 21 10:58:28.057205 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     rv = self.handle_user_exception(e)
+[Fri Oct 21 10:58:28.057237 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Oct 21 10:58:28.057270 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     rv = self.dispatch_request()
+[Fri Oct 21 10:58:28.057301 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Oct 21 10:58:28.057335 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Oct 21 10:58:28.057367 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/var/www/fyssite/__init__.py", line 59, in landing
+[Fri Oct 21 10:58:28.057399 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     return render_template ('landing/landig.html',user = user)
+[Fri Oct 21 10:58:28.057431 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+[Fri Oct 21 10:58:28.057464 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     template = app.jinja_env.get_or_select_template(template_name_or_list)
+[Fri Oct 21 10:58:28.057497 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+[Fri Oct 21 10:58:28.057530 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     return self.get_template(template_name_or_list, parent, globals)
+[Fri Oct 21 10:58:28.057562 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+[Fri Oct 21 10:58:28.057595 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     return self._load_template(name, globals)
+[Fri Oct 21 10:58:28.057627 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+[Fri Oct 21 10:58:28.057717 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     template = self.loader.load(self, name, self.make_globals(globals))
+[Fri Oct 21 10:58:28.057752 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+[Fri Oct 21 10:58:28.057785 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     source, filename, uptodate = self.get_source(environment, name)
+[Fri Oct 21 10:58:28.057818 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+[Fri Oct 21 10:58:28.057850 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     return self._get_source_fast(environment, template)
+[Fri Oct 21 10:58:28.057883 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+[Fri Oct 21 10:58:28.057915 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826]     raise TemplateNotFound(template)
+[Fri Oct 21 10:58:28.057947 2022] [wsgi:error] [pid 15830:tid 281473019777216] [remote 192.168.137.1:1826] jinja2.exceptions.TemplateNotFound: landing/landig.html
+[Thu Dec 15 20:20:06.592094 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936] mod_wsgi (pid=2044): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:20:06.594280 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936] mod_wsgi (pid=2044): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:20:06.595337 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936] Traceback (most recent call last):
+[Thu Dec 15 20:20:06.595507 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:20:06.595543 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936]     from __init__ import create_app
+[Thu Dec 15 20:20:06.595579 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:20:06.595605 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936]     from flask import (
+[Thu Dec 15 20:20:06.595669 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23936] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:20:06.785821 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937] mod_wsgi (pid=2044): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:20:06.786002 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937] mod_wsgi (pid=2044): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:20:06.786298 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937] Traceback (most recent call last):
+[Thu Dec 15 20:20:06.786402 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:20:06.786433 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937]     from __init__ import create_app
+[Thu Dec 15 20:20:06.786468 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:20:06.786494 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937]     from flask import (
+[Thu Dec 15 20:20:06.786578 2022] [wsgi:error] [pid 2044] [remote 192.168.137.1:23937] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:21:27.051520 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976] mod_wsgi (pid=2397): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:27.051824 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976] mod_wsgi (pid=2397): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:27.052780 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976] Traceback (most recent call last):
+[Thu Dec 15 20:21:27.052926 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:21:27.052959 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976]     from __init__ import create_app
+[Thu Dec 15 20:21:27.052995 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:21:27.053022 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976]     from flask import (
+[Thu Dec 15 20:21:27.053082 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23976] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:21:27.109978 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977] mod_wsgi (pid=2397): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:27.110183 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977] mod_wsgi (pid=2397): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:27.110487 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977] Traceback (most recent call last):
+[Thu Dec 15 20:21:27.110635 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:21:27.110682 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977]     from __init__ import create_app
+[Thu Dec 15 20:21:27.110720 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:21:27.110747 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977]     from flask import (
+[Thu Dec 15 20:21:27.110807 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23977] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:21:30.586189 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980] mod_wsgi (pid=2397): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:30.586368 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980] mod_wsgi (pid=2397): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:30.586698 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980] Traceback (most recent call last):
+[Thu Dec 15 20:21:30.586815 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:21:30.586850 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980]     from __init__ import create_app
+[Thu Dec 15 20:21:30.586885 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:21:30.586915 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980]     from flask import (
+[Thu Dec 15 20:21:30.586971 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23980] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:21:30.642335 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981] mod_wsgi (pid=2397): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:30.642503 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981] mod_wsgi (pid=2397): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:21:30.642824 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981] Traceback (most recent call last):
+[Thu Dec 15 20:21:30.642941 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:21:30.643035 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981]     from __init__ import create_app
+[Thu Dec 15 20:21:30.643077 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981]   File "/var/www/fyssite/__init__.py", line 3, in <module>
+[Thu Dec 15 20:21:30.643104 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981]     from flask import (
+[Thu Dec 15 20:21:30.643161 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:23981] ImportError: cannot import name 'db2' from 'flask' (/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/__init__.py)
+[Thu Dec 15 20:23:18.324984 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016] [2022-12-15 20:23:18,318] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:23:18.325139 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016] Traceback (most recent call last):
+[Thu Dec 15 20:23:18.325171 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:23:18.325196 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]     response = self.full_dispatch_request()
+[Thu Dec 15 20:23:18.325219 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:23:18.325242 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:23:18.325265 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:23:18.325288 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]     rv = self.dispatch_request()
+[Thu Dec 15 20:23:18.325310 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:23:18.325334 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:23:18.325356 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:23:18.325380 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016]     passwd = db(username)
+[Thu Dec 15 20:23:18.325402 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24016] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:24:10.080882 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024] [2022-12-15 20:24:10,079] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:24:10.081050 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024] Traceback (most recent call last):
+[Thu Dec 15 20:24:10.081082 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:24:10.081108 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]     response = self.full_dispatch_request()
+[Thu Dec 15 20:24:10.081131 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:24:10.081155 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:24:10.081178 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:24:10.081204 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]     rv = self.dispatch_request()
+[Thu Dec 15 20:24:10.081273 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:24:10.081299 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:24:10.081322 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:24:10.081345 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024]     passwd = db()
+[Thu Dec 15 20:24:10.081367 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24024] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:25:23.492872 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034] [2022-12-15 20:25:23,492] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:25:23.493053 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034] Traceback (most recent call last):
+[Thu Dec 15 20:25:23.493102 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:25:23.493130 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]     response = self.full_dispatch_request()
+[Thu Dec 15 20:25:23.493157 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:25:23.493184 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:25:23.493207 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:25:23.493231 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]     rv = self.dispatch_request()
+[Thu Dec 15 20:25:23.493254 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:25:23.493279 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:25:23.493303 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:25:23.493326 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034]     passwd = db()
+[Thu Dec 15 20:25:23.493348 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24034] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:26:49.655241 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064] [2022-12-15 20:26:49,654] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:26:49.655392 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064] Traceback (most recent call last):
+[Thu Dec 15 20:26:49.655423 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:26:49.655449 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]     response = self.full_dispatch_request()
+[Thu Dec 15 20:26:49.655472 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:26:49.655498 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:26:49.655521 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:26:49.655601 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]     rv = self.dispatch_request()
+[Thu Dec 15 20:26:49.655627 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:26:49.655651 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:26:49.655675 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:26:49.655698 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064]     passwd = db()
+[Thu Dec 15 20:26:49.655721 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24064] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:27:09.803491 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069] [2022-12-15 20:27:09,802] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:27:09.803648 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069] Traceback (most recent call last):
+[Thu Dec 15 20:27:09.803678 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:27:09.803705 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]     response = self.full_dispatch_request()
+[Thu Dec 15 20:27:09.803728 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:27:09.803751 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:27:09.803774 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:27:09.803800 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]     rv = self.dispatch_request()
+[Thu Dec 15 20:27:09.803822 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:27:09.803846 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:27:09.803869 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:27:09.803891 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069]     passwd = db()
+[Thu Dec 15 20:27:09.803914 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24069] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:27:59.383395 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083] [2022-12-15 20:27:59,382] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:27:59.383543 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083] Traceback (most recent call last):
+[Thu Dec 15 20:27:59.383574 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:27:59.383598 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]     response = self.full_dispatch_request()
+[Thu Dec 15 20:27:59.383622 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:27:59.383645 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:27:59.383668 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:27:59.383741 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]     rv = self.dispatch_request()
+[Thu Dec 15 20:27:59.383765 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:27:59.383789 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:27:59.383812 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:27:59.383834 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083]     passwd = db()
+[Thu Dec 15 20:27:59.383857 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24083] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:28:29.038022 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089] [2022-12-15 20:28:29,036] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:28:29.038161 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089] Traceback (most recent call last):
+[Thu Dec 15 20:28:29.038191 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:28:29.038216 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]     response = self.full_dispatch_request()
+[Thu Dec 15 20:28:29.038239 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:28:29.038263 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:28:29.038286 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:28:29.038309 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]     rv = self.dispatch_request()
+[Thu Dec 15 20:28:29.038331 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:28:29.038354 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:28:29.038377 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:28:29.038399 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089]     @staticmethod
+[Thu Dec 15 20:28:29.038421 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24089] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:28:38.103675 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093] [2022-12-15 20:28:38,103] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:28:38.103822 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093] Traceback (most recent call last):
+[Thu Dec 15 20:28:38.103852 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:28:38.103876 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]     response = self.full_dispatch_request()
+[Thu Dec 15 20:28:38.103899 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:28:38.103923 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:28:38.103945 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:28:38.104023 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]     rv = self.dispatch_request()
+[Thu Dec 15 20:28:38.104048 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:28:38.104072 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:28:38.104095 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:28:38.104118 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093]     @staticmethod
+[Thu Dec 15 20:28:38.104140 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24093] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:29:02.330392 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096] [2022-12-15 20:29:02,329] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:29:02.330530 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096] Traceback (most recent call last):
+[Thu Dec 15 20:29:02.330585 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:29:02.330615 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]     response = self.full_dispatch_request()
+[Thu Dec 15 20:29:02.330640 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:29:02.330663 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:29:02.330686 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:29:02.330709 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]     rv = self.dispatch_request()
+[Thu Dec 15 20:29:02.330732 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:29:02.330758 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:29:02.330781 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:29:02.330803 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096]     passwd = db()
+[Thu Dec 15 20:29:02.330825 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24096] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:29:08.536420 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099] [2022-12-15 20:29:08,535] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:29:08.536570 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099] Traceback (most recent call last):
+[Thu Dec 15 20:29:08.536602 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:29:08.536627 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]     response = self.full_dispatch_request()
+[Thu Dec 15 20:29:08.536651 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:29:08.536674 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:29:08.536751 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:29:08.536775 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]     rv = self.dispatch_request()
+[Thu Dec 15 20:29:08.536799 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:29:08.536822 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:29:08.536845 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:29:08.536867 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099]     passwd = db()
+[Thu Dec 15 20:29:08.536890 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24099] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:30:46.950197 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133] [2022-12-15 20:30:46,949] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:30:46.950338 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133] Traceback (most recent call last):
+[Thu Dec 15 20:30:46.950370 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:30:46.950394 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]     response = self.full_dispatch_request()
+[Thu Dec 15 20:30:46.950417 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:30:46.950440 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:30:46.950462 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:30:46.950486 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]     rv = self.dispatch_request()
+[Thu Dec 15 20:30:46.950508 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:30:46.950531 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:30:46.950554 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:30:46.950622 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133]     passwd = db2.db()
+[Thu Dec 15 20:30:46.950646 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24133] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:30:58.567790 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137] [2022-12-15 20:30:58,567] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:30:58.567929 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137] Traceback (most recent call last):
+[Thu Dec 15 20:30:58.567959 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:30:58.567984 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]     response = self.full_dispatch_request()
+[Thu Dec 15 20:30:58.568008 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:30:58.568031 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:30:58.568107 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:30:58.568132 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]     rv = self.dispatch_request()
+[Thu Dec 15 20:30:58.568155 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:30:58.568180 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:30:58.568203 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:30:58.568226 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137]     passwd = db2.db()
+[Thu Dec 15 20:30:58.568248 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24137] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:31:19.817798 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139] [2022-12-15 20:31:19,816] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:31:19.817945 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139] Traceback (most recent call last):
+[Thu Dec 15 20:31:19.817976 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:31:19.818000 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]     response = self.full_dispatch_request()
+[Thu Dec 15 20:31:19.818024 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:31:19.818047 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:31:19.818070 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:31:19.818093 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]     rv = self.dispatch_request()
+[Thu Dec 15 20:31:19.818116 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:31:19.818140 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:31:19.818163 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:31:19.818186 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139]     passwd = db2.db()
+[Thu Dec 15 20:31:19.818208 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24139] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:31:23.451728 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142] [2022-12-15 20:31:23,451] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:31:23.451870 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142] Traceback (most recent call last):
+[Thu Dec 15 20:31:23.451899 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:31:23.451924 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]     response = self.full_dispatch_request()
+[Thu Dec 15 20:31:23.451948 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:31:23.452028 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:31:23.452053 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:31:23.452077 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]     rv = self.dispatch_request()
+[Thu Dec 15 20:31:23.452101 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:31:23.452125 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:31:23.452148 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:31:23.452171 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142]     passwd = db2.db()
+[Thu Dec 15 20:31:23.452193 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24142] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:32:28.504309 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147] [2022-12-15 20:32:28,503] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:32:28.504462 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147] Traceback (most recent call last):
+[Thu Dec 15 20:32:28.504492 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:32:28.504517 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]     response = self.full_dispatch_request()
+[Thu Dec 15 20:32:28.504540 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:32:28.504564 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:32:28.504587 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:32:28.504610 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]     rv = self.dispatch_request()
+[Thu Dec 15 20:32:28.504633 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:32:28.504656 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:32:28.504679 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:32:28.504702 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147]     passwd = db2.db()
+[Thu Dec 15 20:32:28.504724 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24147] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:32:31.574161 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151] [2022-12-15 20:32:31,573] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:32:31.574255 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151] Traceback (most recent call last):
+[Thu Dec 15 20:32:31.574282 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:32:31.574309 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]     response = self.full_dispatch_request()
+[Thu Dec 15 20:32:31.574332 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:32:31.574412 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:32:31.574437 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:32:31.574461 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]     rv = self.dispatch_request()
+[Thu Dec 15 20:32:31.574483 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:32:31.574507 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:32:31.574530 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:32:31.574552 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151]     passwd = db2.db()
+[Thu Dec 15 20:32:31.574618 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24151] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:33:50.521935 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162] [2022-12-15 20:33:50,521] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:33:50.522079 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162] Traceback (most recent call last):
+[Thu Dec 15 20:33:50.522109 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:33:50.522133 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]     response = self.full_dispatch_request()
+[Thu Dec 15 20:33:50.522157 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:33:50.522180 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:33:50.522203 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:33:50.522226 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]     rv = self.dispatch_request()
+[Thu Dec 15 20:33:50.522248 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:33:50.522271 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:33:50.522294 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:33:50.522316 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162]     passwd = db2.db()
+[Thu Dec 15 20:33:50.522341 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24162] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:34:48.126407 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182] [2022-12-15 20:34:48,125] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:34:48.126551 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182] Traceback (most recent call last):
+[Thu Dec 15 20:34:48.126631 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:34:48.126658 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]     response = self.full_dispatch_request()
+[Thu Dec 15 20:34:48.126740 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:34:48.126766 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:34:48.126790 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:34:48.126813 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]     rv = self.dispatch_request()
+[Thu Dec 15 20:34:48.126837 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:34:48.126861 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:34:48.126883 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:34:48.126906 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182]     passwd = db2.db()
+[Thu Dec 15 20:34:48.126928 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24182] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:35:08.087980 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187] [2022-12-15 20:35:08,086] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:35:08.088114 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187] Traceback (most recent call last):
+[Thu Dec 15 20:35:08.088142 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:35:08.088166 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]     response = self.full_dispatch_request()
+[Thu Dec 15 20:35:08.088190 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:35:08.088217 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:35:08.088240 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:35:08.088263 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]     rv = self.dispatch_request()
+[Thu Dec 15 20:35:08.088285 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:35:08.088309 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:35:08.088332 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:35:08.088354 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187]     passwd = 'test'
+[Thu Dec 15 20:35:08.088376 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24187] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:35:12.813589 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189] [2022-12-15 20:35:12,812] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:35:12.813733 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189] Traceback (most recent call last):
+[Thu Dec 15 20:35:12.813763 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:35:12.813789 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]     response = self.full_dispatch_request()
+[Thu Dec 15 20:35:12.813869 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:35:12.813894 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:35:12.813917 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:35:12.813941 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]     rv = self.dispatch_request()
+[Thu Dec 15 20:35:12.813964 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:35:12.813987 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:35:12.814010 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:35:12.814032 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189]     passwd = 'test'
+[Thu Dec 15 20:35:12.814054 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24189] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:35:16.329859 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194] [2022-12-15 20:35:16,329] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:35:16.329987 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194] Traceback (most recent call last):
+[Thu Dec 15 20:35:16.330020 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:35:16.330045 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]     response = self.full_dispatch_request()
+[Thu Dec 15 20:35:16.330068 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:35:16.330092 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:35:16.330115 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:35:16.330139 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]     rv = self.dispatch_request()
+[Thu Dec 15 20:35:16.330161 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:35:16.330185 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:35:16.330208 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:35:16.330230 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194]     passwd = 'test'
+[Thu Dec 15 20:35:16.330253 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24194] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:36:18.489814 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208] [2022-12-15 20:36:18,488] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:36:18.489953 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208] Traceback (most recent call last):
+[Thu Dec 15 20:36:18.489982 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:36:18.490061 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]     response = self.full_dispatch_request()
+[Thu Dec 15 20:36:18.490086 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:36:18.490109 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:36:18.490132 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:36:18.490157 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]     rv = self.dispatch_request()
+[Thu Dec 15 20:36:18.490180 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:36:18.490203 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:36:18.490226 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]   File "/var/www/fyssite/__init__.py", line 45, in login
+[Thu Dec 15 20:36:18.490248 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208]     if username == user and password == passwd:
+[Thu Dec 15 20:36:18.490270 2022] [wsgi:error] [pid 2397] [remote 192.168.137.1:24208] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:38:13.497946 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230] [2022-12-15 20:38:13,494] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:38:13.498103 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230] Traceback (most recent call last):
+[Thu Dec 15 20:38:13.498135 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:38:13.498160 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]     response = self.full_dispatch_request()
+[Thu Dec 15 20:38:13.498183 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:38:13.498206 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:38:13.498228 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:38:13.498251 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]     rv = self.dispatch_request()
+[Thu Dec 15 20:38:13.498274 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:38:13.498297 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:38:13.498320 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:38:13.498342 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230]     passwd = db()
+[Thu Dec 15 20:38:13.498365 2022] [wsgi:error] [pid 2594] [remote 192.168.137.1:24230] TypeError: db() missing 1 required positional argument: 'self'
+[Thu Dec 15 20:38:40.231044 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237] [2022-12-15 20:38:40,228] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:38:40.231208 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237] Traceback (most recent call last):
+[Thu Dec 15 20:38:40.231241 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:38:40.231317 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]     response = self.full_dispatch_request()
+[Thu Dec 15 20:38:40.231342 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:38:40.231365 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:38:40.231388 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:38:40.231412 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]     rv = self.dispatch_request()
+[Thu Dec 15 20:38:40.231434 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:38:40.231459 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:38:40.231482 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:38:40.231504 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237]     passwd = db(self)
+[Thu Dec 15 20:38:40.231527 2022] [wsgi:error] [pid 2636] [remote 192.168.137.1:24237] NameError: name 'self' is not defined
+[Thu Dec 15 20:39:13.534205 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240] <mariadb.connection connected to '127.0.0.1' at 0xffff7e91bb00>
+[Thu Dec 15 20:39:13.539368 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240] [2022-12-15 20:39:13,535] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:39:13.539490 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240] Traceback (most recent call last):
+[Thu Dec 15 20:39:13.539522 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:39:13.539548 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     response = self.full_dispatch_request()
+[Thu Dec 15 20:39:13.539572 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:39:13.539595 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:39:13.539619 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:39:13.539642 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     rv = self.dispatch_request()
+[Thu Dec 15 20:39:13.539666 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:39:13.539690 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:39:13.539713 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:39:13.539737 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     passwd = db()
+[Thu Dec 15 20:39:13.539759 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]   File "/var/www/fyssite/db2.py", line 16, in db
+[Thu Dec 15 20:39:13.539783 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE ticketnummer = {username};")
+[Thu Dec 15 20:39:13.539863 2022] [wsgi:error] [pid 2721] [remote 192.168.137.1:24240] NameError: name 'username' is not defined
+[Thu Dec 15 20:39:21.399195 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246] <mariadb.connection connected to '127.0.0.1' at 0xffff99a3bb00>
+[Thu Dec 15 20:39:21.403066 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246] [2022-12-15 20:39:21,400] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:39:21.403177 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246] Traceback (most recent call last):
+[Thu Dec 15 20:39:21.403208 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:39:21.403233 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     response = self.full_dispatch_request()
+[Thu Dec 15 20:39:21.403256 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:39:21.403281 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:39:21.403303 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:39:21.403327 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     rv = self.dispatch_request()
+[Thu Dec 15 20:39:21.403349 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:39:21.403374 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:39:21.403397 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:39:21.403422 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     passwd = db()
+[Thu Dec 15 20:39:21.403445 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]   File "/var/www/fyssite/db2.py", line 16, in db
+[Thu Dec 15 20:39:21.403469 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE ticketnummer = {username};")
+[Thu Dec 15 20:39:21.403492 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:24246] NameError: name 'username' is not defined
+[Thu Dec 15 20:40:27.345158 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276] [2022-12-15 20:40:27,342] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:40:27.345323 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276] Traceback (most recent call last):
+[Thu Dec 15 20:40:27.345357 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:40:27.345382 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]     response = self.full_dispatch_request()
+[Thu Dec 15 20:40:27.345405 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:40:27.345430 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:40:27.345453 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:40:27.345476 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]     rv = self.dispatch_request()
+[Thu Dec 15 20:40:27.345499 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:40:27.345573 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:40:27.345600 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:40:27.345623 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276]     passwd = db(username)
+[Thu Dec 15 20:40:27.345646 2022] [wsgi:error] [pid 2823] [remote 192.168.137.1:24276] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:40:59.921963 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277] [2022-12-15 20:40:59,917] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:40:59.922163 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277] Traceback (most recent call last):
+[Thu Dec 15 20:40:59.922205 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:40:59.922235 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     response = self.full_dispatch_request()
+[Thu Dec 15 20:40:59.922262 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:40:59.922286 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:40:59.922309 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:40:59.922333 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     rv = self.dispatch_request()
+[Thu Dec 15 20:40:59.922357 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:40:59.922380 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:40:59.922404 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:40:59.922428 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     passwd = db()
+[Thu Dec 15 20:40:59.922451 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]   File "/var/www/fyssite/db2.py", line 10, in db
+[Thu Dec 15 20:40:59.922474 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277]     username =  username
+[Thu Dec 15 20:40:59.922497 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24277] UnboundLocalError: local variable 'username' referenced before assignment
+[Thu Dec 15 20:41:02.335715 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281] [2022-12-15 20:41:02,334] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:41:02.335877 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281] Traceback (most recent call last):
+[Thu Dec 15 20:41:02.335907 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:41:02.335931 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     response = self.full_dispatch_request()
+[Thu Dec 15 20:41:02.335955 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:41:02.335978 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:41:02.336001 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:41:02.336088 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     rv = self.dispatch_request()
+[Thu Dec 15 20:41:02.336114 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:41:02.336137 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:41:02.336160 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:41:02.336183 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     passwd = db()
+[Thu Dec 15 20:41:02.336205 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]   File "/var/www/fyssite/db2.py", line 10, in db
+[Thu Dec 15 20:41:02.336227 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281]     username =  username
+[Thu Dec 15 20:41:02.336251 2022] [wsgi:error] [pid 2866] [remote 192.168.137.1:24281] UnboundLocalError: local variable 'username' referenced before assignment
+[Thu Dec 15 20:42:20.621245 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349] mod_wsgi (pid=2901): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:42:20.621471 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349] mod_wsgi (pid=2901): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:42:20.622417 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349] Traceback (most recent call last):
+[Thu Dec 15 20:42:20.622606 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:42:20.622648 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]     from __init__ import create_app
+[Thu Dec 15 20:42:20.622686 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]   File "/var/www/fyssite/__init__.py", line 6, in <module>
+[Thu Dec 15 20:42:20.622713 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]     from db2 import *
+[Thu Dec 15 20:42:20.622770 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]   File "/var/www/fyssite/db2.py", line 9
+[Thu Dec 15 20:42:20.622819 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]     from __init__ import *
+[Thu Dec 15 20:42:20.622893 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349]                          ^
+[Thu Dec 15 20:42:20.622934 2022] [wsgi:error] [pid 2901] [remote 192.168.137.1:24349] SyntaxError: import * only allowed at module level
+[Thu Dec 15 20:43:15.535196 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365] <mariadb.connection connected to '127.0.0.1' at 0xffffac95bb00>
+[Thu Dec 15 20:43:15.540189 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365] [2022-12-15 20:43:15,536] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:43:15.540315 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365] Traceback (most recent call last):
+[Thu Dec 15 20:43:15.540349 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:43:15.540374 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     response = self.full_dispatch_request()
+[Thu Dec 15 20:43:15.540398 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:43:15.540421 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:43:15.540445 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:43:15.540527 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     rv = self.dispatch_request()
+[Thu Dec 15 20:43:15.540553 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:43:15.540576 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:43:15.540599 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Thu Dec 15 20:43:15.540623 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     passwd = db()
+[Thu Dec 15 20:43:15.540646 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]   File "/var/www/fyssite/db2.py", line 16, in db
+[Thu Dec 15 20:43:15.540706 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE ticketnummer = {username};")
+[Thu Dec 15 20:43:15.540732 2022] [wsgi:error] [pid 2976] [remote 192.168.137.1:24365] NameError: name 'username' is not defined
+[Thu Dec 15 20:43:55.689627 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376] [2022-12-15 20:43:55,686] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:43:55.689802 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376] Traceback (most recent call last):
+[Thu Dec 15 20:43:55.689832 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:43:55.689857 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]     response = self.full_dispatch_request()
+[Thu Dec 15 20:43:55.689881 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:43:55.689905 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:43:55.689927 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:43:55.689950 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]     rv = self.dispatch_request()
+[Thu Dec 15 20:43:55.689973 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:43:55.689997 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:43:55.690020 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Thu Dec 15 20:43:55.690042 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376]     passwd = db(username)
+[Thu Dec 15 20:43:55.690064 2022] [wsgi:error] [pid 3068] [remote 192.168.137.1:24376] TypeError: db() takes 0 positional arguments but 1 was given
+[Thu Dec 15 20:44:20.911377 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383] <mariadb.connection connected to '127.0.0.1' at 0xffff830ebb00>
+[Thu Dec 15 20:44:20.918761 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383] [2022-12-15 20:44:20,912] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:44:20.918899 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383] Traceback (most recent call last):
+[Thu Dec 15 20:44:20.918935 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:44:20.918963 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     response = self.full_dispatch_request()
+[Thu Dec 15 20:44:20.919048 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:44:20.919077 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:44:20.919101 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:44:20.919124 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     rv = self.dispatch_request()
+[Thu Dec 15 20:44:20.919147 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:44:20.919172 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:44:20.919196 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Thu Dec 15 20:44:20.919218 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     passwd = db(username)
+[Thu Dec 15 20:44:20.919241 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/var/www/fyssite/db2.py", line 16, in db
+[Thu Dec 15 20:44:20.919264 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE ticketnummer = {username};")
+[Thu Dec 15 20:44:20.919287 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]   File "/home/max/.local/lib/python3.10/site-packages/mariadb/cursors.py", line 312, in execute
+[Thu Dec 15 20:44:20.919310 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383]     self._readresponse()
+[Thu Dec 15 20:44:20.919333 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24383] mariadb.ProgrammingError: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+[Thu Dec 15 20:45:12.879269 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392] <mariadb.connection connected to '127.0.0.1' at 0xffff830ebc40>
+[Thu Dec 15 20:45:12.881647 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392] [2022-12-15 20:45:12,880] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:45:12.881758 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392] Traceback (most recent call last):
+[Thu Dec 15 20:45:12.881788 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:45:12.881815 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     response = self.full_dispatch_request()
+[Thu Dec 15 20:45:12.881838 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:45:12.881862 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:45:12.881885 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:45:12.881911 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     rv = self.dispatch_request()
+[Thu Dec 15 20:45:12.881934 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:45:12.881959 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:45:12.881982 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Thu Dec 15 20:45:12.882056 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     passwd = db(username)
+[Thu Dec 15 20:45:12.882080 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/var/www/fyssite/db2.py", line 16, in db
+[Thu Dec 15 20:45:12.882104 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE ticketnummer = '{username}';")
+[Thu Dec 15 20:45:12.882128 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]   File "/home/max/.local/lib/python3.10/site-packages/mariadb/cursors.py", line 312, in execute
+[Thu Dec 15 20:45:12.882151 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392]     self._readresponse()
+[Thu Dec 15 20:45:12.882176 2022] [wsgi:error] [pid 3124] [remote 192.168.137.1:24392] mariadb.ProgrammingError: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+[Thu Dec 15 20:45:39.035884 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24399] <mariadb.connection connected to '127.0.0.1' at 0xffff8578bb00>
+[Thu Dec 15 20:45:39.037222 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24399] ('20',)
+[Thu Dec 15 20:45:40.798157 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24402] <mariadb.connection connected to '127.0.0.1' at 0xffff8578bb00>
+[Thu Dec 15 20:45:40.799426 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24402] ('20',)
+[Thu Dec 15 20:45:42.895323 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24399] <mariadb.connection connected to '127.0.0.1' at 0xffff8578bb00>
+[Thu Dec 15 20:45:42.896476 2022] [wsgi:error] [pid 3165] [remote 192.168.137.1:24399] ('20',)
+[Thu Dec 15 20:46:56.015898 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411] mod_wsgi (pid=3211): Failed to exec Python script file '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:46:56.016136 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411] mod_wsgi (pid=3211): Exception occurred processing WSGI script '/var/www/fyssite/app.wsgi'.
+[Thu Dec 15 20:46:56.025019 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411] Traceback (most recent call last):
+[Thu Dec 15 20:46:56.025185 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411]   File "/var/www/fyssite/app.wsgi", line 8, in <module>
+[Thu Dec 15 20:46:56.025221 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411]     from __init__ import create_app
+[Thu Dec 15 20:46:56.025282 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411]   File "/var/www/fyssite/__init__.py", line 43
+[Thu Dec 15 20:46:56.025333 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411]     print result
+[Thu Dec 15 20:46:56.025398 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411]     ^^^^^^^^^^^^
+[Thu Dec 15 20:46:56.025447 2022] [wsgi:error] [pid 3211] [remote 192.168.137.1:24411] SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+[Thu Dec 15 20:47:08.651067 2022] [wsgi:error] [pid 3242] [remote 192.168.137.1:24415] <mariadb.connection connected to '127.0.0.1' at 0xffffa3febb00>
+[Thu Dec 15 20:47:08.653264 2022] [wsgi:error] [pid 3242] [remote 192.168.137.1:24415] ('20',)
+[Thu Dec 15 20:47:14.390526 2022] [wsgi:error] [pid 3242] [remote 192.168.137.1:24416] <mariadb.connection connected to '127.0.0.1' at 0xffffa3febb00>
+[Thu Dec 15 20:47:14.391819 2022] [wsgi:error] [pid 3242] [remote 192.168.137.1:24416] ('20',)
+[Thu Dec 15 20:47:48.704096 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423] <mariadb.connection connected to '127.0.0.1' at 0xffff99e9bb00>
+[Thu Dec 15 20:47:48.705345 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423] ('20',)
+[Thu Dec 15 20:47:48.709463 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423] [2022-12-15 20:47:48,706] ERROR in app: Exception on /login [POST]
+[Thu Dec 15 20:47:48.709578 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423] Traceback (most recent call last):
+[Thu Dec 15 20:47:48.709658 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Thu Dec 15 20:47:48.709684 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]     response = self.full_dispatch_request()
+[Thu Dec 15 20:47:48.709707 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Thu Dec 15 20:47:48.709731 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]     rv = self.handle_user_exception(e)
+[Thu Dec 15 20:47:48.709753 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Thu Dec 15 20:47:48.709778 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]     rv = self.dispatch_request()
+[Thu Dec 15 20:47:48.709800 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Thu Dec 15 20:47:48.709824 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Thu Dec 15 20:47:48.709846 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Thu Dec 15 20:47:48.709868 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423]     print(result)
+[Thu Dec 15 20:47:48.709891 2022] [wsgi:error] [pid 3284] [remote 192.168.137.1:24423] NameError: name 'result' is not defined
+[Thu Dec 15 20:48:27.565707 2022] [wsgi:error] [pid 3320] [remote 192.168.137.1:24428] <mariadb.connection connected to '127.0.0.1' at 0xffff8282bb00>
+[Thu Dec 15 20:48:27.568300 2022] [wsgi:error] [pid 3320] [remote 192.168.137.1:24428] ('20',)
+[Thu Dec 15 20:48:27.569612 2022] [wsgi:error] [pid 3320] [remote 192.168.137.1:24428] [('20',)]
+[Thu Dec 15 20:49:18.404499 2022] [wsgi:error] [pid 3363] [remote 192.168.137.1:24439] <mariadb.connection connected to '127.0.0.1' at 0xffff7f39bb00>
+[Thu Dec 15 20:49:18.406088 2022] [wsgi:error] [pid 3363] [remote 192.168.137.1:24439] ('20',)
+[Thu Dec 15 20:49:18.406391 2022] [wsgi:error] [pid 3363] [remote 192.168.137.1:24439] test [('20',)]
+[Thu Dec 15 20:53:09.977327 2022] [wsgi:error] [pid 3410] [remote 192.168.137.1:24559] <mariadb.connection connected to '127.0.0.1' at 0xffffa8d0bb00>
+[Thu Dec 15 20:53:09.978635 2022] [wsgi:error] [pid 3410] [remote 192.168.137.1:24559] ('luiten',)
+[Thu Dec 15 20:53:09.978934 2022] [wsgi:error] [pid 3410] [remote 192.168.137.1:24559] test [('luiten',)]
+[Thu Dec 15 20:54:03.936893 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24572] <mariadb.connection connected to '127.0.0.1' at 0xffff997fbb00>
+[Thu Dec 15 20:54:03.938323 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24572] ('luiten',)
+[Thu Dec 15 20:54:03.938627 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24572] test [('luiten',)]
+[Thu Dec 15 20:54:06.108945 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24575] <mariadb.connection connected to '127.0.0.1' at 0xffff997fbb00>
+[Thu Dec 15 20:54:06.110210 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24575] ('luiten',)
+[Thu Dec 15 20:54:06.110489 2022] [wsgi:error] [pid 3452] [remote 192.168.137.1:24575] test [('luiten',)]
+[Fri Dec 16 12:07:25.831591 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542] [2022-12-16 12:07:25,825] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 12:07:25.833710 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542] Traceback (most recent call last):
+[Fri Dec 16 12:07:25.833747 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 12:07:25.833768 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]     response = self.full_dispatch_request()
+[Fri Dec 16 12:07:25.833826 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 12:07:25.833847 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]     rv = self.handle_user_exception(e)
+[Fri Dec 16 12:07:25.833866 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 12:07:25.833886 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]     rv = self.dispatch_request()
+[Fri Dec 16 12:07:25.833905 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 12:07:25.833924 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 12:07:25.833943 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Fri Dec 16 12:07:25.833962 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542]     passwd = db()
+[Fri Dec 16 12:07:25.833981 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3542] TypeError: db() missing 1 required positional argument: 'username'
+[Fri Dec 16 12:08:35.352501 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555] [2022-12-16 12:08:35,351] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 12:08:35.352618 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555] Traceback (most recent call last):
+[Fri Dec 16 12:08:35.352644 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 12:08:35.352665 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]     response = self.full_dispatch_request()
+[Fri Dec 16 12:08:35.352685 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 12:08:35.352704 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]     rv = self.handle_user_exception(e)
+[Fri Dec 16 12:08:35.352724 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 12:08:35.352744 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]     rv = self.dispatch_request()
+[Fri Dec 16 12:08:35.352763 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 12:08:35.352783 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 12:08:35.352802 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]   File "/var/www/fyssite/__init__.py", line 42, in login
+[Fri Dec 16 12:08:35.352821 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555]     passwd = db(username)
+[Fri Dec 16 12:08:35.352840 2022] [wsgi:error] [pid 1091] [remote 192.168.137.1:3555] TypeError: db() missing 1 required positional argument: 'username'
+[Fri Dec 16 12:09:37.218100 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3571] <mariadb.connection connected to '127.0.0.1' at 0xffff7f72bb00>
+[Fri Dec 16 12:09:37.222624 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3571] ('luiten',)
+[Fri Dec 16 12:09:37.222900 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3571] test [('luiten',)]
+[Fri Dec 16 12:09:39.634982 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3569] <mariadb.connection connected to '127.0.0.1' at 0xffff7f72bb00>
+[Fri Dec 16 12:09:39.636116 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3569] ('luiten',)
+[Fri Dec 16 12:09:39.636359 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3569] test [('luiten',)]
+[Fri Dec 16 12:09:42.096487 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3565] <mariadb.connection connected to '127.0.0.1' at 0xffff7f72bb00>
+[Fri Dec 16 12:09:42.097616 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3565] ('luiten',)
+[Fri Dec 16 12:09:42.097861 2022] [wsgi:error] [pid 1900] [remote 192.168.137.1:3565] test [('luiten',)]
+[Fri Dec 16 12:10:49.913826 2022] [wsgi:error] [pid 1936] [remote 192.168.137.1:3587] <mariadb.connection connected to '127.0.0.1' at 0xffff77a6bb00>
+[Fri Dec 16 12:10:49.915179 2022] [wsgi:error] [pid 1936] [remote 192.168.137.1:3587] test []
+[Fri Dec 16 12:10:53.035609 2022] [wsgi:error] [pid 1936] [remote 192.168.137.1:3589] <mariadb.connection connected to '127.0.0.1' at 0xffff77a6bb00>
+[Fri Dec 16 12:10:53.036909 2022] [wsgi:error] [pid 1936] [remote 192.168.137.1:3589] test []
+[Fri Dec 16 12:11:57.671909 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3596] <mariadb.connection connected to '127.0.0.1' at 0xffffa26ebb00>
+[Fri Dec 16 12:11:57.673187 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3596] test []
+[Fri Dec 16 12:12:20.384538 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3607] <mariadb.connection connected to '127.0.0.1' at 0xffffa26ebb00>
+[Fri Dec 16 12:12:20.385761 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3607] test []
+[Fri Dec 16 12:12:22.773797 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3608] <mariadb.connection connected to '127.0.0.1' at 0xffffa26ebb00>
+[Fri Dec 16 12:12:22.775166 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3608] test []
+[Fri Dec 16 12:14:10.558733 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3657] <mariadb.connection connected to '127.0.0.1' at 0xffffa26ebb00>
+[Fri Dec 16 12:14:10.560018 2022] [wsgi:error] [pid 2008] [remote 192.168.137.1:3657] test []
+[Fri Dec 16 12:14:50.651157 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3671] <mariadb.connection connected to '127.0.0.1' at 0xffffa9c7bb00>
+[Fri Dec 16 12:14:50.652296 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3671] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:14:50.652545 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3671] test []
+[Fri Dec 16 12:14:52.639682 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3674] <mariadb.connection connected to '127.0.0.1' at 0xffffa9c7bb00>
+[Fri Dec 16 12:14:52.640784 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3674] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:14:52.641029 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3674] test []
+[Fri Dec 16 12:16:01.665370 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3681] <mariadb.connection connected to '127.0.0.1' at 0xffffa9c7bb00>
+[Fri Dec 16 12:16:01.666486 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3681] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:16:01.666749 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3681] test []
+[Fri Dec 16 12:16:03.641448 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3684] <mariadb.connection connected to '127.0.0.1' at 0xffffa9c7bb00>
+[Fri Dec 16 12:16:03.642743 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3684] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:16:03.642995 2022] [wsgi:error] [pid 2133] [remote 192.168.137.1:3684] test []
+[Fri Dec 16 12:16:24.803407 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3686] 
+[Fri Dec 16 12:16:24.806874 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3686] <mariadb.connection connected to '127.0.0.1' at 0xffff7fe0bb00>
+[Fri Dec 16 12:16:24.813049 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3686] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:16:24.813659 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3686] test []
+[Fri Dec 16 12:16:29.858482 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3689] 
+[Fri Dec 16 12:16:29.860176 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3689] <mariadb.connection connected to '127.0.0.1' at 0xffff7fe0bb00>
+[Fri Dec 16 12:16:29.861295 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3689] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:16:29.861546 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3689] test []
+[Fri Dec 16 12:16:59.411325 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3695] 
+[Fri Dec 16 12:16:59.412989 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3695] <mariadb.connection connected to '127.0.0.1' at 0xffff7fe0bb00>
+[Fri Dec 16 12:16:59.414047 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3695] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:16:59.414285 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3695] test []
+[Fri Dec 16 12:17:11.396664 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3701] luiten
+[Fri Dec 16 12:17:11.398283 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3701] <mariadb.connection connected to '127.0.0.1' at 0xffff7fe0bb00>
+[Fri Dec 16 12:17:11.399387 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3701] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:17:11.399522 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3701] ('20',)
+[Fri Dec 16 12:17:11.399715 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3701] test [('20',)]
+[Fri Dec 16 12:17:40.777752 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3708] luiten
+[Fri Dec 16 12:17:40.779435 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3708] <mariadb.connection connected to '127.0.0.1' at 0xffff7fe0bb00>
+[Fri Dec 16 12:17:40.780518 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3708] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:17:40.780638 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3708] ('20',)
+[Fri Dec 16 12:17:40.780822 2022] [wsgi:error] [pid 2203] [remote 192.168.137.1:3708] test [('20',)]
+[Fri Dec 16 12:19:12.254920 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] 
+[Fri Dec 16 12:19:12.258187 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] <mariadb.connection connected to '127.0.0.1' at 0xffffa9b8bb00>
+[Fri Dec 16 12:19:12.259307 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:19:12.259580 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] test []
+[Fri Dec 16 12:19:12.263108 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] [2022-12-16 12:19:12,260] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 12:19:12.263190 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] Traceback (most recent call last):
+[Fri Dec 16 12:19:12.263214 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 12:19:12.263234 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]     response = self.full_dispatch_request()
+[Fri Dec 16 12:19:12.263254 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 12:19:12.263273 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]     rv = self.handle_user_exception(e)
+[Fri Dec 16 12:19:12.263292 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 12:19:12.263312 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]     rv = self.dispatch_request()
+[Fri Dec 16 12:19:12.263330 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 12:19:12.263350 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 12:19:12.263415 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]   File "/var/www/fyssite/__init__.py", line 44, in login
+[Fri Dec 16 12:19:12.263435 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725]     user= username
+[Fri Dec 16 12:19:12.263453 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3725] NameError: name 'username' is not defined
+[Fri Dec 16 12:19:29.660281 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] luiten
+[Fri Dec 16 12:19:29.661967 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] <mariadb.connection connected to '127.0.0.1' at 0xffffa9b8bb00>
+[Fri Dec 16 12:19:29.663124 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:19:29.663261 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] ('20',)
+[Fri Dec 16 12:19:29.663456 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] test [('20',)]
+[Fri Dec 16 12:19:29.664586 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] [2022-12-16 12:19:29,663] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 12:19:29.664657 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] Traceback (most recent call last):
+[Fri Dec 16 12:19:29.664679 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 12:19:29.664700 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]     response = self.full_dispatch_request()
+[Fri Dec 16 12:19:29.664719 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 12:19:29.664739 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]     rv = self.handle_user_exception(e)
+[Fri Dec 16 12:19:29.664758 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 12:19:29.664777 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]     rv = self.dispatch_request()
+[Fri Dec 16 12:19:29.664796 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 12:19:29.664816 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 12:19:29.664835 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]   File "/var/www/fyssite/__init__.py", line 44, in login
+[Fri Dec 16 12:19:29.664854 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734]     user= username
+[Fri Dec 16 12:19:29.664873 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3734] NameError: name 'username' is not defined
+[Fri Dec 16 12:20:38.997587 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] 
+[Fri Dec 16 12:20:38.999380 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] <mariadb.connection connected to '127.0.0.1' at 0xffffa9b8bb00>
+[Fri Dec 16 12:20:39.000534 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:20:39.000794 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] test []
+[Fri Dec 16 12:20:39.002536 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] [2022-12-16 12:20:39,001] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 12:20:39.002613 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] Traceback (most recent call last):
+[Fri Dec 16 12:20:39.002634 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 12:20:39.002707 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]     response = self.full_dispatch_request()
+[Fri Dec 16 12:20:39.002727 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 12:20:39.002747 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]     rv = self.handle_user_exception(e)
+[Fri Dec 16 12:20:39.002766 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 12:20:39.002785 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]     rv = self.dispatch_request()
+[Fri Dec 16 12:20:39.002804 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 12:20:39.002823 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 12:20:39.002843 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]   File "/var/www/fyssite/__init__.py", line 44, in login
+[Fri Dec 16 12:20:39.002861 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742]     user= username
+[Fri Dec 16 12:20:39.002880 2022] [wsgi:error] [pid 2253] [remote 192.168.137.1:3742] NameError: name 'username' is not defined
+[Fri Dec 16 12:20:51.193136 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3752] 
+[Fri Dec 16 12:20:51.196439 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3752] <mariadb.connection connected to '127.0.0.1' at 0xffffa377bb00>
+[Fri Dec 16 12:20:51.197580 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3752] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:20:51.197847 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3752] test []
+[Fri Dec 16 12:20:54.523474 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3750] luiten
+[Fri Dec 16 12:20:54.525438 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3750] <mariadb.connection connected to '127.0.0.1' at 0xffffa377bb00>
+[Fri Dec 16 12:20:54.526595 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3750] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:20:54.526734 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3750] ('20',)
+[Fri Dec 16 12:20:54.526941 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3750] test [('20',)]
+[Fri Dec 16 12:21:35.430011 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3757] 
+[Fri Dec 16 12:21:35.431647 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3757] <mariadb.connection connected to '127.0.0.1' at 0xffffa377bb00>
+[Fri Dec 16 12:21:35.432756 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3757] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:21:35.433031 2022] [wsgi:error] [pid 2305] [remote 192.168.137.1:3757] test []
+[Fri Dec 16 12:21:41.990877 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3761] 
+[Fri Dec 16 12:21:41.994100 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3761] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 12:21:41.995242 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3761] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 12:21:41.995508 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3761] test []
+[Fri Dec 16 12:21:49.107264 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3765] luiten
+[Fri Dec 16 12:21:49.108969 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3765] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 12:21:49.110107 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3765] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:21:49.110243 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3765] ('20',)
+[Fri Dec 16 12:21:49.110520 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3765] test [('20',)]
+[Fri Dec 16 12:26:43.400740 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3793] luiten
+[Fri Dec 16 12:26:43.402429 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3793] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 12:26:43.403512 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3793] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:26:43.403633 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3793] ('20',)
+[Fri Dec 16 12:26:43.403824 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3793] test [('20',)]
+[Fri Dec 16 12:26:52.800817 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3802] luiten
+[Fri Dec 16 12:26:52.802468 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3802] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 12:26:52.803542 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3802] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 12:26:52.803658 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3802] ('20',)
+[Fri Dec 16 12:26:52.803848 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:3802] test [('20',)]
+[Fri Dec 16 13:09:37.318036 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4115] luiten
+[Fri Dec 16 13:09:37.319853 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4115] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 13:09:37.320948 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4115] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:09:37.321068 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4115] ('20',)
+[Fri Dec 16 13:09:37.321266 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4115] test [('20',)]
+[Fri Dec 16 13:10:16.028298 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4129] 
+[Fri Dec 16 13:10:16.029966 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4129] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 13:10:16.031305 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4129] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 13:10:16.031560 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4129] test []
+[Fri Dec 16 13:10:25.053284 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4133] luiten
+[Fri Dec 16 13:10:25.055024 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4133] <mariadb.connection connected to '127.0.0.1' at 0xffff99d1bb00>
+[Fri Dec 16 13:10:25.056135 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4133] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:10:25.056262 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4133] ('20',)
+[Fri Dec 16 13:10:25.056472 2022] [wsgi:error] [pid 2348] [remote 192.168.137.1:4133] test [('20',)]
+[Fri Dec 16 13:17:26.301684 2022] [wsgi:error] [pid 2717] [remote 192.168.137.1:4167] luiten
+[Fri Dec 16 13:17:26.305043 2022] [wsgi:error] [pid 2717] [remote 192.168.137.1:4167] <mariadb.connection connected to '127.0.0.1' at 0xffffaa42bb00>
+[Fri Dec 16 13:17:26.306126 2022] [wsgi:error] [pid 2717] [remote 192.168.137.1:4167] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:17:26.306256 2022] [wsgi:error] [pid 2717] [remote 192.168.137.1:4167] ('20',)
+[Fri Dec 16 13:17:26.306497 2022] [wsgi:error] [pid 2717] [remote 192.168.137.1:4167] test [('20',)]
+[Fri Dec 16 13:17:47.099061 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4178] <mariadb.connection connected to '127.0.0.1' at 0xffff83e5bb00>
+[Fri Dec 16 13:17:47.100230 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4178] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 13:17:47.100478 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4178] test []
+[Fri Dec 16 13:25:30.565472 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4273] <mariadb.connection connected to '127.0.0.1' at 0xffff83e5bb00>
+[Fri Dec 16 13:25:30.566713 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4273] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:25:30.566942 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4273] ('20',)
+[Fri Dec 16 13:25:30.567201 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4273] test [('20',)]
+[Fri Dec 16 13:26:02.705728 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4288] <mariadb.connection connected to '127.0.0.1' at 0xffff83e5bb00>
+[Fri Dec 16 13:26:02.706877 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4288] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:26:02.707005 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4288] ('20',)
+[Fri Dec 16 13:26:02.707200 2022] [wsgi:error] [pid 2754] [remote 192.168.137.1:4288] test [('20',)]
+[Fri Dec 16 13:31:04.279846 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467] <mariadb.connection connected to '127.0.0.1' at 0xffff88b8bb00>
+[Fri Dec 16 13:31:04.283858 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467] [2022-12-16 13:31:04,280] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 13:31:04.283942 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467] Traceback (most recent call last):
+[Fri Dec 16 13:31:04.283966 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 13:31:04.283987 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     response = self.full_dispatch_request()
+[Fri Dec 16 13:31:04.284006 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 13:31:04.284026 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     rv = self.handle_user_exception(e)
+[Fri Dec 16 13:31:04.284044 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 13:31:04.284063 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     rv = self.dispatch_request()
+[Fri Dec 16 13:31:04.284082 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 13:31:04.284102 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 13:31:04.284121 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/var/www/fyssite/__init__.py", line 46, in login
+[Fri Dec 16 13:31:04.284140 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     passwd = db(surname) # roep functie aan en geeft de var username mee
+[Fri Dec 16 13:31:04.284159 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]   File "/var/www/fyssite/db2.py", line 16, in db
+[Fri Dec 16 13:31:04.284177 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467]     mycursor.execute(f"SELECT ticketnummer FROM vlucht WHERE achternaam = '{username}';")
+[Fri Dec 16 13:31:04.284196 2022] [wsgi:error] [pid 2874] [remote 192.168.137.1:4467] NameError: name 'username' is not defined
+[Fri Dec 16 13:31:39.607605 2022] [wsgi:error] [pid 2916] [remote 192.168.137.1:4477] <mariadb.connection connected to '127.0.0.1' at 0xffff81b5bb00>
+[Fri Dec 16 13:31:39.608789 2022] [wsgi:error] [pid 2916] [remote 192.168.137.1:4477] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:31:39.608918 2022] [wsgi:error] [pid 2916] [remote 192.168.137.1:4477] ('20',)
+[Fri Dec 16 13:31:39.609121 2022] [wsgi:error] [pid 2916] [remote 192.168.137.1:4477] test [('20',)]
+[Fri Dec 16 13:33:08.299432 2022] [wsgi:error] [pid 2961] [remote 192.168.137.1:4499] <mariadb.connection connected to '127.0.0.1' at 0xffffa2c3bb00>
+[Fri Dec 16 13:33:08.300544 2022] [wsgi:error] [pid 2961] [remote 192.168.137.1:4499] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:33:08.300744 2022] [wsgi:error] [pid 2961] [remote 192.168.137.1:4499] ('20',)
+[Fri Dec 16 13:33:08.300944 2022] [wsgi:error] [pid 2961] [remote 192.168.137.1:4499] test [('20',)]
+[Fri Dec 16 13:33:08.300988 2022] [wsgi:error] [pid 2961] [remote 192.168.137.1:4499] luiten
+[Fri Dec 16 13:35:14.501442 2022] [wsgi:error] [pid 3003] [remote 192.168.137.1:4530] <mariadb.connection connected to '127.0.0.1' at 0xffff9822bb00>
+[Fri Dec 16 13:35:14.502683 2022] [wsgi:error] [pid 3003] [remote 192.168.137.1:4530] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:35:14.502826 2022] [wsgi:error] [pid 3003] [remote 192.168.137.1:4530] ('20',)
+[Fri Dec 16 13:35:14.503045 2022] [wsgi:error] [pid 3003] [remote 192.168.137.1:4530] DEBUG INFO: surname:luiten user:luiten password:20 passwd:[('20',)]
+[Fri Dec 16 13:42:10.546237 2022] [wsgi:error] [pid 3138] [remote 192.168.137.1:4619] <mariadb.connection connected to '127.0.0.1' at 0xffff99d4bb00>
+[Fri Dec 16 13:42:10.547478 2022] [wsgi:error] [pid 3138] [remote 192.168.137.1:4619] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:42:10.547612 2022] [wsgi:error] [pid 3138] [remote 192.168.137.1:4619] ('20',)
+[Fri Dec 16 13:42:10.547814 2022] [wsgi:error] [pid 3138] [remote 192.168.137.1:4619] DEBUG INFO: surname:luiten user:luiten password:[(password,)] passwd:[('20',)]
+[Fri Dec 16 13:42:59.082958 2022] [wsgi:error] [pid 3180] [remote 192.168.137.1:4643] <mariadb.connection connected to '127.0.0.1' at 0xffff89e9bb00>
+[Fri Dec 16 13:42:59.084149 2022] [wsgi:error] [pid 3180] [remote 192.168.137.1:4643] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:42:59.084286 2022] [wsgi:error] [pid 3180] [remote 192.168.137.1:4643] ('20',)
+[Fri Dec 16 13:42:59.084490 2022] [wsgi:error] [pid 3180] [remote 192.168.137.1:4643] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:46:26.309971 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4675] <mariadb.connection connected to '127.0.0.1' at 0xffff8560bb00>
+[Fri Dec 16 13:46:26.311207 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4675] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:46:26.311344 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4675] ('20',)
+[Fri Dec 16 13:46:26.311547 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4675] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:48:26.429402 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4697] <mariadb.connection connected to '127.0.0.1' at 0xffff8560bb00>
+[Fri Dec 16 13:48:26.430588 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4697] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:48:26.430717 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4697] ('20',)
+[Fri Dec 16 13:48:26.430913 2022] [wsgi:error] [pid 3230] [remote 192.168.137.1:4697] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:50:04.512479 2022] [wsgi:error] [pid 3281] [remote 192.168.137.1:4732] <mariadb.connection connected to '127.0.0.1' at 0xffffa6f9bb00>
+[Fri Dec 16 13:50:04.513660 2022] [wsgi:error] [pid 3281] [remote 192.168.137.1:4732] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:50:04.513794 2022] [wsgi:error] [pid 3281] [remote 192.168.137.1:4732] ('20',)
+[Fri Dec 16 13:50:04.514000 2022] [wsgi:error] [pid 3281] [remote 192.168.137.1:4732] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:50:51.116981 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] <mariadb.connection connected to '127.0.0.1' at 0xffff75babb00>
+[Fri Dec 16 13:50:51.118157 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:50:51.118289 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] ('20',)
+[Fri Dec 16 13:50:51.118564 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:50:51.118699 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] DEBUG INFO 2: surname:luiten user:luiten password:[('20',)] passwd:[('20',)]
+[Fri Dec 16 13:50:51.118734 2022] [wsgi:error] [pid 3327] [remote 192.168.137.1:4740] komt niet over een
+[Fri Dec 16 13:54:08.675617 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] <mariadb.connection connected to '127.0.0.1' at 0xffffa8f8bb00>
+[Fri Dec 16 13:54:08.676854 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 13:54:08.676967 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] 20
+[Fri Dec 16 13:54:08.677192 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] DEBUG INFO: surname:luiten user:luiten password:[('20',)] passwd:('20',)
+[Fri Dec 16 13:54:08.677283 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] DEBUG INFO 2: surname:luiten user:luiten password:[('20',)] passwd:('20',)
+[Fri Dec 16 13:54:08.677318 2022] [wsgi:error] [pid 3373] [remote 192.168.137.1:4796] komt niet over een
+[Fri Dec 16 14:00:28.737300 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] <mariadb.connection connected to '127.0.0.1' at 0xffffa77fbb00>
+[Fri Dec 16 14:00:28.738513 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 14:00:28.738626 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] 20
+[Fri Dec 16 14:00:28.738814 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] DEBUG INFO: surname:luiten user:luiten password:('20',) passwd:20
+[Fri Dec 16 14:00:28.738877 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] DEBUG INFO 2: surname:luiten user:luiten password:('20',) passwd:20
+[Fri Dec 16 14:00:28.738910 2022] [wsgi:error] [pid 3434] [remote 192.168.137.1:4895] komt niet over een
+[Fri Dec 16 14:01:04.900067 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4905] <mariadb.connection connected to '127.0.0.1' at 0xffff761ebb00>
+[Fri Dec 16 14:01:04.901411 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4905] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 14:01:04.901540 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4905] 20
+[Fri Dec 16 14:01:04.901735 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4905] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:02:20.355386 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4945] <mariadb.connection connected to '127.0.0.1' at 0xffff761ebb00>
+[Fri Dec 16 14:02:20.356550 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4945] SELECT ticketnummer FROM vlucht WHERE achternaam = 'luiten';
+[Fri Dec 16 14:02:20.356662 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4945] 20
+[Fri Dec 16 14:02:20.356843 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4945] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:02:27.730225 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4948] <mariadb.connection connected to '127.0.0.1' at 0xffff761ebb00>
+[Fri Dec 16 14:02:27.731447 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4948] SELECT ticketnummer FROM vlucht WHERE achternaam = 'LUITEN';
+[Fri Dec 16 14:02:27.731558 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4948] 20
+[Fri Dec 16 14:02:27.731740 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4948] DEBUG INFO: surname:LUITEN user:LUITEN password:20 passwd:20
+[Fri Dec 16 14:02:38.482966 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4963] <mariadb.connection connected to '127.0.0.1' at 0xffff761ebb00>
+[Fri Dec 16 14:02:38.484035 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4963] SELECT ticketnummer FROM vlucht WHERE achternaam = 'Luiten';
+[Fri Dec 16 14:02:38.484138 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4963] 20
+[Fri Dec 16 14:02:38.484325 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:4963] DEBUG INFO: surname:Luiten user:Luiten password:20 passwd:20
+[Fri Dec 16 14:06:15.311374 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010] <mariadb.connection connected to '127.0.0.1' at 0xffff761ebb00>
+[Fri Dec 16 14:06:15.312635 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010] SELECT ticketnummer FROM vlucht WHERE achternaam = '';
+[Fri Dec 16 14:06:15.316350 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010] [2022-12-16 14:06:15,313] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:06:15.316436 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010] Traceback (most recent call last):
+[Fri Dec 16 14:06:15.316457 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:06:15.316477 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]     response = self.full_dispatch_request()
+[Fri Dec 16 14:06:15.316497 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:06:15.316517 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:06:15.316536 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:06:15.316555 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]     rv = self.dispatch_request()
+[Fri Dec 16 14:06:15.316574 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:06:15.316594 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:06:15.316613 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/var/www/fyssite/__init__.py", line 46, in login
+[Fri Dec 16 14:06:15.316632 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]   File "/var/www/fyssite/db2.py", line 19, in db
+[Fri Dec 16 14:06:15.316651 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010]     print(data)
+[Fri Dec 16 14:06:15.316670 2022] [wsgi:error] [pid 3477] [remote 192.168.137.1:5010] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:06:37.519819 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016] <mariadb.connection connected to '127.0.0.1' at 0xffff7ba6bb00>
+[Fri Dec 16 14:06:37.524691 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016] [2022-12-16 14:06:37,521] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:06:37.524787 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016] Traceback (most recent call last):
+[Fri Dec 16 14:06:37.524810 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:06:37.524831 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     response = self.full_dispatch_request()
+[Fri Dec 16 14:06:37.524850 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:06:37.524869 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:06:37.524888 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:06:37.524907 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     rv = self.dispatch_request()
+[Fri Dec 16 14:06:37.524926 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:06:37.524986 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:06:37.525007 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/var/www/fyssite/__init__.py", line 43, in login
+[Fri Dec 16 14:06:37.525026 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     passwd = db(surname) # roep functie aan en geeft de var username mee
+[Fri Dec 16 14:06:37.525045 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:06:37.525063 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016]     data = result[0]
+[Fri Dec 16 14:06:37.525081 2022] [wsgi:error] [pid 3535] [remote 192.168.137.1:5016] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:38:28.095919 2022] [wsgi:error] [pid 3704] [remote 192.168.137.1:5300] <mariadb.connection connected to '127.0.0.1' at 0xffff8f25bb00>
+[Fri Dec 16 14:38:28.097104 2022] [wsgi:error] [pid 3704] [remote 192.168.137.1:5300] 20
+[Fri Dec 16 14:38:28.097328 2022] [wsgi:error] [pid 3704] [remote 192.168.137.1:5300] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:39:53.309274 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] <mariadb.connection connected to '127.0.0.1' at 0xffff74c3bb00>
+[Fri Dec 16 14:39:53.310480 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] 20
+[Fri Dec 16 14:39:53.311097 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:39:53.317336 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] [2022-12-16 14:39:53,311] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:39:53.317420 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] Traceback (most recent call last):
+[Fri Dec 16 14:39:53.317444 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:39:53.317464 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     response = self.full_dispatch_request()
+[Fri Dec 16 14:39:53.317483 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:39:53.317502 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:39:53.317521 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:39:53.317540 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     rv = self.dispatch_request()
+[Fri Dec 16 14:39:53.317559 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:39:53.317578 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:39:53.317597 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/var/www/fyssite/__init__.py", line 64, in login
+[Fri Dec 16 14:39:53.317616 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     session.clear() #clear the session cookie
+[Fri Dec 16 14:39:53.317634 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/sessions.py", line 98, in _fail
+[Fri Dec 16 14:39:53.317653 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323]     raise RuntimeError(
+[Fri Dec 16 14:39:53.317672 2022] [wsgi:error] [pid 3802] [remote 192.168.137.1:5323] RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[Fri Dec 16 14:40:13.077101 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] <mariadb.connection connected to '127.0.0.1' at 0xffff9d07bb00>
+[Fri Dec 16 14:40:13.078304 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] 20
+[Fri Dec 16 14:40:13.078574 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:40:13.082289 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] [2022-12-16 14:40:13,079] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:40:13.082407 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] Traceback (most recent call last):
+[Fri Dec 16 14:40:13.082438 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:40:13.082460 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     response = self.full_dispatch_request()
+[Fri Dec 16 14:40:13.082480 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:40:13.082500 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:40:13.082519 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:40:13.082538 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     rv = self.dispatch_request()
+[Fri Dec 16 14:40:13.082557 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:40:13.082578 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:40:13.082597 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/var/www/fyssite/__init__.py", line 64, in login
+[Fri Dec 16 14:40:13.082616 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     session.clear() #clear the session cookie
+[Fri Dec 16 14:40:13.082634 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/sessions.py", line 98, in _fail
+[Fri Dec 16 14:40:13.082653 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327]     raise RuntimeError(
+[Fri Dec 16 14:40:13.082673 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5327] RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[Fri Dec 16 14:40:48.343397 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] <mariadb.connection connected to '127.0.0.1' at 0xffff9d07bb00>
+[Fri Dec 16 14:40:48.344540 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] 20
+[Fri Dec 16 14:40:48.344764 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] DEBUG INFO: surname:luiten user:luiten password:20 passwd:20
+[Fri Dec 16 14:40:48.346311 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] [2022-12-16 14:40:48,345] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:40:48.346428 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] Traceback (most recent call last):
+[Fri Dec 16 14:40:48.346456 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:40:48.346476 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     response = self.full_dispatch_request()
+[Fri Dec 16 14:40:48.346495 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:40:48.346567 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:40:48.346587 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:40:48.346607 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     rv = self.dispatch_request()
+[Fri Dec 16 14:40:48.346625 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:40:48.346645 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:40:48.346663 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/var/www/fyssite/__init__.py", line 64, in login
+[Fri Dec 16 14:40:48.346682 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     if surname and password != None:
+[Fri Dec 16 14:40:48.346701 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/sessions.py", line 98, in _fail
+[Fri Dec 16 14:40:48.346720 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335]     raise RuntimeError(
+[Fri Dec 16 14:40:48.346739 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5335] RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[Fri Dec 16 14:40:51.455626 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339] <mariadb.connection connected to '127.0.0.1' at 0xffff9d07bb00>
+[Fri Dec 16 14:40:51.458192 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339] [2022-12-16 14:40:51,456] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:40:51.458299 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339] Traceback (most recent call last):
+[Fri Dec 16 14:40:51.458322 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:40:51.458342 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]     response = self.full_dispatch_request()
+[Fri Dec 16 14:40:51.458361 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:40:51.458427 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:40:51.458450 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:40:51.458470 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]     rv = self.dispatch_request()
+[Fri Dec 16 14:40:51.458489 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:40:51.458509 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:40:51.458529 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/var/www/fyssite/__init__.py", line 48, in login
+[Fri Dec 16 14:40:51.458547 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:40:51.458566 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339]     data = result[0]
+[Fri Dec 16 14:40:51.458584 2022] [wsgi:error] [pid 3859] [remote 192.168.137.1:5339] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:40:59.753757 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342] <mariadb.connection connected to '127.0.0.1' at 0xffff8b9a7b00>
+[Fri Dec 16 14:40:59.758771 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342] [2022-12-16 14:40:59,755] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:40:59.758877 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342] Traceback (most recent call last):
+[Fri Dec 16 14:40:59.758899 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:40:59.758920 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     response = self.full_dispatch_request()
+[Fri Dec 16 14:40:59.758939 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:40:59.758958 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:40:59.758977 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:40:59.758996 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     rv = self.dispatch_request()
+[Fri Dec 16 14:40:59.759014 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:40:59.759034 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:40:59.759054 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/var/www/fyssite/__init__.py", line 51, in login
+[Fri Dec 16 14:40:59.759072 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     passwd = db(surname) # Call the function bd form the file db2.py and gives the variable surname to the function
+[Fri Dec 16 14:40:59.759092 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:40:59.759110 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342]     data = result[0]
+[Fri Dec 16 14:40:59.759128 2022] [wsgi:error] [pid 3902] [remote 192.168.137.1:5342] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:41:20.847667 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354] <mariadb.connection connected to '127.0.0.1' at 0xffff875bbb00>
+[Fri Dec 16 14:41:20.852571 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354] [2022-12-16 14:41:20,849] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:41:20.852664 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354] Traceback (most recent call last):
+[Fri Dec 16 14:41:20.852687 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:41:20.852708 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     response = self.full_dispatch_request()
+[Fri Dec 16 14:41:20.852727 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:41:20.852747 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:41:20.852766 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:41:20.852785 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     rv = self.dispatch_request()
+[Fri Dec 16 14:41:20.852803 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:41:20.852866 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:41:20.852887 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Dec 16 14:41:20.852906 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     passwd = db(surname) # Call the function bd form the file db2.py and gives the variable surname to the function
+[Fri Dec 16 14:41:20.852926 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:41:20.852944 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354]     data = result[0]
+[Fri Dec 16 14:41:20.852963 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5354] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:42:29.383611 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373] <mariadb.connection connected to '127.0.0.1' at 0xffff875bbc40>
+[Fri Dec 16 14:42:29.385678 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373] [2022-12-16 14:42:29,384] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:42:29.385758 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373] Traceback (most recent call last):
+[Fri Dec 16 14:42:29.385781 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:42:29.385801 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     response = self.full_dispatch_request()
+[Fri Dec 16 14:42:29.385821 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:42:29.385840 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:42:29.385859 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:42:29.385878 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     rv = self.dispatch_request()
+[Fri Dec 16 14:42:29.385897 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:42:29.385916 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:42:29.385935 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Dec 16 14:42:29.385954 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     passwd = db(surname) # Call the function bd form the file db2.py and gives the variable surname to the function
+[Fri Dec 16 14:42:29.385973 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:42:29.385992 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373]     data = result[0]
+[Fri Dec 16 14:42:29.386010 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5373] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:42:33.859043 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372] <mariadb.connection connected to '127.0.0.1' at 0xffff875bbc40>
+[Fri Dec 16 14:42:33.861188 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372] [2022-12-16 14:42:33,860] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:42:33.861267 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372] Traceback (most recent call last):
+[Fri Dec 16 14:42:33.861289 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:42:33.861358 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     response = self.full_dispatch_request()
+[Fri Dec 16 14:42:33.861378 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:42:33.861397 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:42:33.861416 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:42:33.861435 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     rv = self.dispatch_request()
+[Fri Dec 16 14:42:33.861454 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:42:33.861473 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:42:33.861492 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/var/www/fyssite/__init__.py", line 52, in login
+[Fri Dec 16 14:42:33.861511 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     passwd = db(surname) # Call the function bd form the file db2.py and gives the variable surname to the function
+[Fri Dec 16 14:42:33.861530 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]   File "/var/www/fyssite/db2.py", line 18, in db
+[Fri Dec 16 14:42:33.861549 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372]     data = result[0]
+[Fri Dec 16 14:42:33.861567 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5372] TypeError: 'NoneType' object is not subscriptable
+[Fri Dec 16 14:42:48.656293 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5385] <mariadb.connection connected to '127.0.0.1' at 0xffff875bbb00>
+[Fri Dec 16 14:42:48.657391 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5385] 20
+[Fri Dec 16 14:42:48.657610 2022] [wsgi:error] [pid 4000] [remote 192.168.137.1:5385] DEBUG INFO: surname:luiten user:luiten password: passwd:20
+[Fri Dec 16 14:43:47.095219 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404] [2022-12-16 14:43:47,091] ERROR in app: Exception on /login [POST]
+[Fri Dec 16 14:43:47.095344 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404] Traceback (most recent call last):
+[Fri Dec 16 14:43:47.095371 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+[Fri Dec 16 14:43:47.095392 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]     response = self.full_dispatch_request()
+[Fri Dec 16 14:43:47.095412 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+[Fri Dec 16 14:43:47.095431 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]     rv = self.handle_user_exception(e)
+[Fri Dec 16 14:43:47.095450 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+[Fri Dec 16 14:43:47.095470 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]     rv = self.dispatch_request()
+[Fri Dec 16 14:43:47.095489 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]   File "/home/max/.local/share/virtualenvs/max-74J2BvZz/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+[Fri Dec 16 14:43:47.095511 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+[Fri Dec 16 14:43:47.095530 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]   File "/var/www/fyssite/__init__.py", line 56, in login
+[Fri Dec 16 14:43:47.095589 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404]     print(f"DEBUG INFO: surname:{surname} user:{user} password:{password} passwd:{passwd}") # prints debugging info into the log file
+[Fri Dec 16 14:43:47.095610 2022] [wsgi:error] [pid 4098] [remote 192.168.137.1:5404] UnboundLocalError: local variable 'passwd' referenced before assignment
+[Fri Dec 16 14:44:34.203407 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5420] DEBUG INFO: surname: user: password:
+[Fri Dec 16 14:44:35.932629 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5417] DEBUG INFO: surname: user: password:
+[Fri Dec 16 14:44:38.685913 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5419] DEBUG INFO: surname: user: password:20
+[Fri Dec 16 14:44:41.664645 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5417] DEBUG INFO: surname: user: password:
+[Fri Dec 16 14:44:44.377976 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5418] DEBUG INFO: surname: user: password:
+[Fri Dec 16 14:44:45.899697 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5417] DEBUG INFO: surname: user: password:
+[Fri Dec 16 15:09:11.922355 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5643] DEBUG INFO: surname:luiten user:luiten password:20
+[Fri Dec 16 15:09:11.925988 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5643] <mariadb.connection connected to '127.0.0.1' at 0xffff9998bb00>
+[Fri Dec 16 15:09:11.927139 2022] [wsgi:error] [pid 4135] [remote 192.168.137.1:5643] 20
