@@ -59,7 +59,7 @@ cp -R fyssite /var/www/
 
 apt -y install mariadb-server
 systemctl start mariadb.service
-echo "\n N \n N \N y\n y\n y\n y\n" mysql_secure_installation
+echo "N N N y y y y" | mysql_secure_installation
 
 
 mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION; FLUSH PRIVILEGES;"
