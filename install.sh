@@ -17,7 +17,7 @@ if (id -u == 0)
 
     else 
     echo "Draai het script A.U.B als root"
-
+fi
 #########################################
 #               User Config             #
 #########################################
