@@ -11,12 +11,12 @@ sleep 3
 #########################################
 
 
-if [id -u == 0]
-    then 
+if [[ $EUID == 0 ]]; then
     apt update -y # Update the repositorys to the latest versions
 
     else 
     echo "Draai het script A.U.B als root"
+    exit
 fi
 
 #########################################
@@ -27,8 +27,8 @@ fi
 
 echo "Het maken van de vereiste users"
 
-username="corendon" 
-password="corendon"
+$username="corendon" 
+$password="corendon"
 sudo useradd -p $(openssl passwd -1 $password) $username
 echo "De user $username is aangemaakt"
 
