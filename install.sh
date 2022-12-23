@@ -29,7 +29,7 @@ echo "Het maken van de vereiste users"
 
 username="corendon" 
 password="corendon"
-echo $username:$password | chpasswd
+sudo useradd -p $(openssl passwd -1 $password) $username
 echo "De user $username is aangemaakt"
 
 sleep 10
