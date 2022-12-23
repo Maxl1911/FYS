@@ -27,8 +27,8 @@ fi
 
 echo "Het maken van de vereiste users"
 
-username = corendon 
-password = corendon
+$username = corendon 
+$password = corendon
 echo $username:$password | chpasswd
 echo "De user $username is aangemaakt"
 
@@ -43,7 +43,7 @@ sudo passwd -l root
 
 
 #Installeren van bepaalde apache pakketen
-apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev
+apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
@@ -54,15 +54,35 @@ cp -R fyssite /var/www/
 
 
 #########################################
+#               MariaDb                 #
+#########################################
+
+apt -y install mariadb-server
+systemctl start mariadb.service
+mysql_secure_installation
+echo \n
+echo "N"
+echo "N"
+echo "Y"
+echo "Y"
+echo "Y"
+echo "Y"
+
+
+mariadb
+GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit
+#########################################
 #               Pyton Venv              #
 #########################################
 
 cd /var/www/fyssite
 
-apt install python3-venv
+python3-venv
 sudo python3 -m venv venv
 . venv/bin/activate
-pip3 install mariadb
+pip install mariadb
 pip install flask
 cd venv/bin/
 wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
