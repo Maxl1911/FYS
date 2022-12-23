@@ -43,7 +43,7 @@ sudo passwd -l root
 
 
 #Installeren van bepaalde apache pakketen
-apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv
+apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
@@ -78,7 +78,6 @@ mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' 
 
 cd /var/www/fyssite
 
-python3-venv
 sudo python3 -m venv venv
 . venv/bin/activate
 pip install mariadb
