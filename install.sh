@@ -18,6 +18,7 @@ if (id -u == 0)
     else 
     echo "Draai het script A.U.B als root"
 fi
+
 #########################################
 #               User Config             #
 #########################################
@@ -48,7 +49,7 @@ apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
 a2ensite fyssite
 systemctl restart apache2
-cp fyssite /var/www/
+cp -R fyssite /var/www/
 
 #########################################
 #               Pyton Venv              #
@@ -59,6 +60,7 @@ cd /var/www/fyssite
 apt install python3-venv
 sudo python3 -m venv venv
 . venv/bin/activate
+pip3 install mariadb
 pip install flask
 cd venv/bin/
 wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
