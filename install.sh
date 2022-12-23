@@ -11,7 +11,7 @@ sleep 3
 #########################################
 
 
-if (id -u == 0)
+if [id -u == 0]
     then 
     apt update -y # Update the repositorys to the latest versions
 
@@ -43,13 +43,15 @@ sudo passwd -l root
 
 
 #Installeren van bepaalde apache pakketen
-apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql
+apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
+a2dissite 000-default
 a2ensite fyssite
 systemctl restart apache2
 cp -R fyssite /var/www/
+
 
 #########################################
 #               Pyton Venv              #
