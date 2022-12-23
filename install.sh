@@ -42,7 +42,7 @@ sudo passwd -l root
 #########################################
 
 
-#Installeren van bepaalde apache pakketen
+#Installeren van bepaalde apache pakketen en dependencies
 apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
@@ -72,6 +72,9 @@ EOF
 
 
 mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+mariadb -e "CREATE SCHEMA IF NOT EXISTS `Corendon` DEFAULT CHARACTER SET utf8 ; USE `Corendon` ; CREATE TABLE IF NOT EXISTS `Corendon`.`Passagier` (`ticketnummer` INT NOT NULL, `voornaam` VARCHAR(30) NOT NULL,`achternaam` VARCHAR(30) NOT NULL, PRIMARY KEY (`ticketnummer`))ENGINE = InnoDB; CREATE TABLE IF NOT EXISTS `Corendon`.`table1` () ENGINE = InnoDB;CREATE TABLE IF NOT EXISTS `Corendon`.`Passagier` (`ticketnummer` INT NOT NULL,`voornaam` VARCHAR(30) NOT NULL,`achternaam` VARCHAR(30) NOT NULL,PRIMARY KEY (`ticketnummer`))ENGINE = InnoDB;INSERT INTO `Corendon`.`Passagier` (`ticketnummer`, `voornaam`, `achternaam`) VALUES ('80438294','Rafael','Ribbers'), ('80438295','Baban','Gurmail'), ('80438296','Hirra','Patang'), ('80438297','Max','Luiten'), ('80438298','Annas','Aznag');"
+
+
 #########################################
 #               Pyton Venv              #
 #########################################
