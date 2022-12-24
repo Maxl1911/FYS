@@ -12,7 +12,7 @@ sleep 3
 
 
 if [[ $EUID == 0 ]]; then
-    apt update -y # Update the repositorys to the latest versions
+    DEBIAN_FRONTEND=noninteractive apt update -y # Update the repositorys to the latest versions
 
     else 
     echo "Draai het script A.U.B als root"
@@ -38,12 +38,12 @@ sleep 10
 sudo passwd -l root
 
 #########################################
-#               Apache install          #
+#             Apache install            #
 #########################################
-
+echo "Apache Install"
 
 #Installeren van bepaalde apache pakketen en dependencies
-apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
+DEBIAN_FRONTEND=noninteractive apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
@@ -56,8 +56,8 @@ cp -R fyssite /var/www/
 #########################################
 #               MariaDb                 #
 #########################################
-
-apt -y install mariadb-server
+echo "mariaDB install"
+DEBIAN_FRONTEND=noninteractive apt -y install mariadb-server
 systemctl start mariadb.service
 
 mysql_secure_installation << EOF
@@ -78,7 +78,7 @@ mariadb -e "CREATE SCHEMA IF NOT EXISTS `Corendon` DEFAULT CHARACTER SET utf8 ; 
 #########################################
 #               Pyton Venv              #
 #########################################
-
+echo "Python venv install"
 cd /var/www/fyssite
 
 sudo python3 -m venv venv
@@ -94,7 +94,7 @@ systemctl restart apache2
 #########################################
 #               Accesss Point           #
 #########################################
-
+echo "accesspoint install"
 apt -y install hostapd
 systemctl unmask hostapd
 systemctl enable hostapd
@@ -113,6 +113,6 @@ cp dnsmasq.conf /etc/dnsmasq.conf
 
 sudo rfkill unblock wlan
 
-cp hostapd.conf /etc/hostapd/hostapd.conf
+sudo cp hostapd.conf /etc/hostapd/hostapd.conf
 
 sudo systemctl reboot
