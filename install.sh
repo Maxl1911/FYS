@@ -43,7 +43,7 @@ sudo passwd -l root
 echo "Apache Install"
 
 #Installeren van bepaalde apache pakketen en dependencies
-apt install -qq -y apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
+DEBIAN_FRONTEND=noninteractive apt install -qq -y apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
