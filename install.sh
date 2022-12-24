@@ -12,7 +12,7 @@ sleep 3
 
 
 if [[ $EUID == 0 ]]; then
-    DEBIAN_FRONTEND=noninteractive apt update -y # Update the repositorys to the latest versions
+    apt update -qq -y # Update the repositorys to the latest versions
 
     else 
     echo "Draai het script A.U.B als root"
@@ -43,7 +43,7 @@ sudo passwd -l root
 echo "Apache Install"
 
 #Installeren van bepaalde apache pakketen en dependencies
-DEBIAN_FRONTEND=noninteractive apt -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
+apt -qq -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
@@ -57,7 +57,7 @@ cp -R fyssite /var/www/
 #               MariaDb                 #
 #########################################
 echo "mariaDB install"
-DEBIAN_FRONTEND=noninteractive apt -y install mariadb-server
+apt -y install mariadb-server
 systemctl start mariadb.service
 
 mysql_secure_installation << EOF
@@ -99,7 +99,7 @@ apt -y install hostapd
 systemctl unmask hostapd
 systemctl enable hostapd
 
-apt install -y netfilter-persistent iptables-persistent
+DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
 
 cp dhcpcd.conf /etc/dhcpcd.conf
 cp routed-ap.conf /etc/sysctl.d/routed-ap.conf
