@@ -43,11 +43,11 @@ sudo passwd -l root
 echo "Apache Install"
 
 #Installeren van bepaalde apache pakketen en dependencies
-apt -qq -y install apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
+apt install -qq -y apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-mysql libmariadb3 libmariadb-dev python3-venv build-essential libssl-dev libffi-dev python3-dev
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
-a2dissite 000-default
+a2dissite 000-default       
 a2ensite fyssite
 systemctl restart apache2
 cp -R fyssite /var/www/
@@ -57,7 +57,7 @@ cp -R fyssite /var/www/
 #               MariaDb                 #
 #########################################
 echo "mariaDB install"
-apt -y install mariadb-server
+apt install -y -q mariadb-server
 systemctl start mariadb.service
 
 mysql_secure_installation << EOF
@@ -95,24 +95,24 @@ systemctl restart apache2
 #               Accesss Point           #
 #########################################
 echo "accesspoint install"
-apt -y install hostapd
+apt install -y -qq hostapd
 systemctl unmask hostapd
 systemctl enable hostapd
 
 DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
 
-cp dhcpcd.conf /etc/dhcpcd.conf
-cp routed-ap.conf /etc/sysctl.d/routed-ap.conf
+cp dhcpcd.conf /etc/
+cp routed-ap.conf /etc/sysctl.d/
 
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 netfilter-persistent save
 
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-cp dnsmasq.conf /etc/dnsmasq.conf
+cp dnsmasq.conf /etc/
 
 sudo rfkill unblock wlan
 
-sudo cp hostapd.conf /etc/hostapd/hostapd.conf
+sudo cp hostapd.conf /etc/hostapd/
 
 sudo systemctl reboot
