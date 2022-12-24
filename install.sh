@@ -10,9 +10,9 @@ sleep 3
 #               Updaten                 #
 #########################################
 
-
+#Check als de user die het script runt 0 (root) is zo niet exit het script.
 if [[ $EUID == 0 ]]; then
-    apt update -qq -y # Update the repositorys to the latest versions
+    apt update -qq -y # Update de repositorys naar de laatste versie
 
     else 
     echo "Draai het script A.U.B als root"
@@ -34,7 +34,7 @@ echo "De user $username is aangemaakt"
 
 sleep 10
 
-# disabeling the root account
+# disabeling het root account
 sudo passwd -l root
 
 #########################################
@@ -47,18 +47,20 @@ apt install -qq -y apache2 libapache2-mod-wsgi-py3 php libapache2-mod-php php-my
 
 # Copieren van de bestenden
 cp fyssite.conf /etc/apache2/sites-available/fyssite.conf
-a2dissite 000-default       
-a2ensite fyssite
-systemctl restart apache2
-cp -R fyssite /var/www/
+a2dissite 000-default  #het disablen van de defualt site die apache maakt     
+a2ensite fyssite    # Het enablen van de site van het project
+systemctl restart apache2 # Apache restarten
+cp -R fyssite /var/www/ # De website bestanen naar de goede plek zetten
 
 
 #########################################
 #               MariaDb                 #
 #########################################
 echo "mariaDB install"
-apt install -y -q mariadb-server
-systemctl start mariadb.service
+apt install -y -q mariadb-server # mariaDB server installeren.
+systemctl start mariadb.service # De server aanzetten.
+
+# Door milldel van EOF geef ik de waarde aan die tijdens de installatie ingeveord moeten worden.
 
 mysql_secure_installation << EOF
 
@@ -70,8 +72,9 @@ mysql_secure_installation << EOF
 `#Reload privilege tables now? [Y/n]` y
 EOF
 
-
+# maakd e database user corendon aan
 mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+# Maak de database aan met de table en wat data 
 mariadb -e "CREATE SCHEMA IF NOT EXISTS Corendon DEFAULT CHARACTER SET utf8; USE Corendon; CREATE TABLE IF NOT EXISTS Corendon.Passagier (
 	ticketnummer INT NOT NULL,
 	voornaam VARCHAR(30) NOT NULL,
