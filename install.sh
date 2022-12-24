@@ -75,21 +75,6 @@ mariadb -e "GRANT ALL ON *.* TO 'corendon'@'localhost' IDENTIFIED BY 'corendon' 
 mariadb -e "CREATE SCHEMA IF NOT EXISTS `Corendon` DEFAULT CHARACTER SET utf8 ; USE `Corendon` ; CREATE TABLE IF NOT EXISTS `Corendon`.`Passagier` (`ticketnummer` INT NOT NULL, `voornaam` VARCHAR(30) NOT NULL,`achternaam` VARCHAR(30) NOT NULL, PRIMARY KEY (`ticketnummer`))ENGINE = InnoDB; CREATE TABLE IF NOT EXISTS `Corendon`.`table1` () ENGINE = InnoDB;CREATE TABLE IF NOT EXISTS `Corendon`.`Passagier` (`ticketnummer` INT NOT NULL,`voornaam` VARCHAR(30) NOT NULL,`achternaam` VARCHAR(30) NOT NULL,PRIMARY KEY (`ticketnummer`))ENGINE = InnoDB;INSERT INTO `Corendon`.`Passagier` (`ticketnummer`, `voornaam`, `achternaam`) VALUES ('80438294','Rafael','Ribbers'), ('80438295','Baban','Gurmail'), ('80438296','Hirra','Patang'), ('80438297','Max','Luiten'), ('80438298','Annas','Aznag');"
 
 
-#########################################
-#               Pyton Venv              #
-#########################################
-echo "Python venv install"
-cd /var/www/fyssite
-
-sudo python3 -m venv venv
-. venv/bin/activate
-pip install mariadb
-pip install flask
-cd venv/bin/
-wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
-
-systemctl restart apache2
-
 
 #########################################
 #               Accesss Point           #
@@ -114,3 +99,18 @@ cp dnsmasq.conf /etc/
 sudo rfkill unblock wlan
 
 sudo cp hostapd.conf /etc/hostapd/
+
+#########################################
+#               Pyton Venv              #
+#########################################
+echo "Python venv install"
+cd /var/www/fyssite
+
+sudo python3 -m venv venv
+. venv/bin/activate
+pip install mariadb
+pip install flask
+cd venv/bin/
+wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
+
+systemctl restart apache2
