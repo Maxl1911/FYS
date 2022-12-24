@@ -114,5 +114,3 @@ cp dnsmasq.conf /etc/
 sudo rfkill unblock wlan
 
 sudo cp hostapd.conf /etc/hostapd/
-
-sudo systemctl reboot
