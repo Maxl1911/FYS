@@ -91,4 +91,28 @@ wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/maste
 systemctl restart apache2
 
 
+#########################################
+#               Accesss Point           #
+#########################################
 
+apt -y install hostapd
+systemctl unmask hostapd
+systemctl enable hostapd
+
+apt install -y netfilter-persistent iptables-persistent
+
+cp dhcpcd.conf /etc/dhcpcd.conf
+cp routed-ap.conf /etc/sysctl.d/routed-ap.conf
+
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+netfilter-persistent save
+
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+cp dnsmasq.conf /etc/dnsmasq.conf
+
+sudo rfkill unblock wlan
+
+cp hostapd.conf /etc/hostapd/hostapd.conf
+
+sudo systemctl reboot
