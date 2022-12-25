@@ -106,23 +106,6 @@ VALUES
 	('80438298', 'Annas', 'Aznag');"
 
 
-
-#########################################
-#               Pyton Venv              #
-#########################################
-echo "Python venv install"
-cd /var/www/fyssite
-
-sudo python3 -m venv venv
-. venv/bin/activate
-pip install mariadb
-pip install flask
-cd venv/bin/
-wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
-
-systemctl restart apache2
-
-
 #########################################
 #               Accesss Point           #
 #########################################
@@ -162,6 +145,22 @@ sudo apt install ifupdown
 sudo systemctl enable networking
 sudo systemctl disable systemd-networkd
 sudo systemctl restart networking
+
+#########################################
+#               Pyton Venv              #
+#########################################
+echo "Python venv install"
+cd /var/www/fyssite
+
+sudo python3 -m venv venv
+. venv/bin/activate
+pip install mariadb
+pip install flask
+cd venv/bin/
+wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
+
+systemctl restart apache2
+
 
 
 #Na de reboot
