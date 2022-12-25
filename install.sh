@@ -169,3 +169,22 @@ systemctl restart apache2
 # sudo cp resolv.conf /etc/
 # sudo sytemctl restart dnsmasq
 # sudo apt upgrade -y
+# sudo visudo
+
+# Cmnd alias specification
+#   Cmnd_Alias IPSET = /usr/sbin/ipset
+# User privilege specification
+#   root    ALL=(ALL:ALL) ALL
+#   www-data ALL=(ALL) NOPASSWD: IPSET
+# Members of the admin group may gain root privileges
+#   %admin ALL=(ALL) ALL
+
+
+
+#apt-get install ipset ipset-persistent netfilter-persistent
+
+#ipset create whitelist hash:ip
+
+#iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT
+#sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80
+#iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443
