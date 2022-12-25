@@ -125,34 +125,39 @@ systemctl restart apache2
 #########################################
 #               Accesss Point           #
 #########################################
-#echo "accesspoint install"
-#DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd dnsmasq ifupdown
+echo "accesspoint install"
+DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd dnsmasq ifupdown
 
-#sudo systemctl disable systemd-resolved
-#sudo systemctl stop systemd-resolved
-#sudo unlink /etc/resolv.conf
 
-#systemctl unmask hostapd
-#systemctl enable hostapd
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+sudo systemctl mask systemd-resolved
 
-#DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
+cp hosts /etc/
+cp resolv.conf /etc/
 
-#cp dhcpcd.conf /etc/
-#cp routed-ap.conf /etc/sysctl.d/
+systemctl unmask hostapd
+systemctl enable hostapd
 
-#iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
 
-#netfilter-persistent save
+cp dhcpcd.conf /etc/
+cp routed-ap.conf /etc/sysctl.d/
 
-#mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-#cp dnsmasq.conf /etc/
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-#sudo rfkill unblock wlan
+netfilter-persistent save
 
-#sudo cp hostapd.conf /etc/hostapd/
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+cp dnsmasq.conf /etc/
 
-#cp interfaces /etc/network/
+sudo rfkill unblock wlan
 
-#sudo systemctl enable networking
-#sudo systemctl disable systemd-networkd
-#sudo systemctl restart networking
+sudo cp hostapd.conf /etc/hostapd/
+
+cp interfaces /etc/network/
+
+sudo apt install ifupdown
+sudo systemctl enable networking
+sudo systemctl disable systemd-networkd
+sudo systemctl restart networking
