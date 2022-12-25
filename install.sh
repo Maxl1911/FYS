@@ -107,41 +107,6 @@ VALUES
 
 
 #########################################
-#               Accesss Point           #
-#########################################
-echo "accesspoint install"
-DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd dnsmasq ifupdown
-
-sudo systemctl disable systemd-resolved
-sudo systemctl stop systemd-resolved
-sudo unlink /etc/resolv.conf
-
-systemctl unmask hostapd
-systemctl enable hostapd
-
-DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
-
-cp dhcpcd.conf /etc/
-cp routed-ap.conf /etc/sysctl.d/
-
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-
-netfilter-persistent save
-
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-cp dnsmasq.conf /etc/
-
-sudo rfkill unblock wlan
-
-sudo cp hostapd.conf /etc/hostapd/
-
-cp interfaces /etc/network/
-
-sudo systemctl enable networking
-sudo systemctl disable systemd-networkd
-sudo systemctl restart networking
-
-#########################################
 #               Pyton Venv              #
 #########################################
 echo "Python venv install"
@@ -157,3 +122,37 @@ wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/maste
 systemctl restart apache2
 
 
+#########################################
+#               Accesss Point           #
+#########################################
+#echo "accesspoint install"
+#DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd dnsmasq ifupdown
+
+#sudo systemctl disable systemd-resolved
+#sudo systemctl stop systemd-resolved
+#sudo unlink /etc/resolv.conf
+
+#systemctl unmask hostapd
+#systemctl enable hostapd
+
+#DEBIAN_FRONTEND=noninteractive apt install -qq -y netfilter-persistent iptables-persistent
+
+#cp dhcpcd.conf /etc/
+#cp routed-ap.conf /etc/sysctl.d/
+
+#iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+#netfilter-persistent save
+
+#mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+#cp dnsmasq.conf /etc/
+
+#sudo rfkill unblock wlan
+
+#sudo cp hostapd.conf /etc/hostapd/
+
+#cp interfaces /etc/network/
+
+#sudo systemctl enable networking
+#sudo systemctl disable systemd-networkd
+#sudo systemctl restart networking
