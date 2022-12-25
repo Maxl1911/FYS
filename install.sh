@@ -36,6 +36,21 @@ sleep 10
 
 # disabeling het root account
 sudo passwd -l root
+#########################################
+#             Apache SSL                #
+#########################################
+a2enmod ssl
+systemctl restart apache2
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt << EOF
+
+`#Country Name (2 letter code) [AU]:` NL
+`#State or Province Name (full name) []:` Noord-Holland
+`#Locality Name (eg, city) [Default City]:` Amsterdam
+`#Organization Name (eg, company) [Default Company Ltd]:` FYS
+`#Organizational Unit Name (eg, section) []:`
+`#Common Name (eg, your name or your server's hostname) []:` FYS Team C
+`#Email Address []:`
+EOF
 
 #########################################
 #             Apache install            #
@@ -52,21 +67,6 @@ a2ensite fyssite    # Het enablen van de site van het project
 systemctl restart apache2 # Apache restarten
 cp -R fyssite /var/www/ # De website bestanen naar de goede plek zetten
 
-#########################################
-#             Apache SSL                #
-#########################################
-a2enmod ssl
-systemctl restart apache2
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt << EOF
-
-`#Country Name (2 letter code) [AU]:` NL
-`#State or Province Name (full name) []:` Noord-Holland
-`#Locality Name (eg, city) [Default City]:` Amsterdam
-`#Organization Name (eg, company) [Default Company Ltd]:` FYS
-`#Organizational Unit Name (eg, section) []:`
-`#Common Name (eg, your name or your server's hostname) []:` FYS Team C
-`#Email Address []:`
-EOF
 
 #########################################
 #               MariaDb                 #
@@ -144,3 +144,5 @@ cd venv/bin/
 wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
 
 systemctl restart apache2
+
+
