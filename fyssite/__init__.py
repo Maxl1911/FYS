@@ -1,4 +1,5 @@
 import os
+import subprocess
 from flask import Flask
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -67,11 +68,19 @@ def create_app(test_config=None):
                 if surname == user and password == passwd:
                     session.clear() #clear the session cookie
                     session['user_id'] = surname # makes an session cookie and store the surname in it.
+                    ip = request.remote_addr
+                    os.system(f'sudo ipset add whitelist {ip}')
+                    print(ip)
+                    print("GOED")
                     return redirect("/landing")
                 else:
+                    print(f"DEBUG INFO: surname:{surname} user:{user} password:{password} passwd:{passwd}")
+                    print(type(password))
+                    print(type(passwd))
                     return render_template ('login/login.html', error = error) # if the if stamets fails rerender the login page with an error
             else:
-                 return redirect("/login")
+                print("LEEEEG")
+                return redirect("/login")
         return render_template ('login/login.html')
 
 #########################################
@@ -87,5 +96,7 @@ def create_app(test_config=None):
     @app.route('/logout')
     def logout():
         session.clear()
+        ip = request.remote_addr
+        os.system(f'sudo ipset del whitelist {ip}')
         return redirect(url_for('login'))  
     return app
