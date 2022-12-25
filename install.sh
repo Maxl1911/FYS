@@ -168,3 +168,4 @@ systemctl restart apache2
 # sudo rm /etc/resolv.conf
 # sudo cp resolv.conf /etc/
 # sudo sytemctl restart dnsmasq
+# sudo apt upgrade -y
