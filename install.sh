@@ -110,7 +110,12 @@ VALUES
 #               Accesss Point           #
 #########################################
 echo "accesspoint install"
-DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd
+DEBIAN_FRONTEND=noninteractive apt install -y -qq hostapd dnsmasq ifupdown
+
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+sudo unlink /etc/resolv.conf
+
 systemctl unmask hostapd
 systemctl enable hostapd
 
@@ -129,6 +134,12 @@ cp dnsmasq.conf /etc/
 sudo rfkill unblock wlan
 
 sudo cp hostapd.conf /etc/hostapd/
+
+cp interfaces /etc/network/
+
+sudo systemctl enable networking
+sudo systemctl disable systemd-networkd
+sudo systemctl restart networking
 
 #########################################
 #               Pyton Venv              #
