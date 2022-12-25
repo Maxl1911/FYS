@@ -162,3 +162,10 @@ sudo apt install ifupdown
 sudo systemctl enable networking
 sudo systemctl disable systemd-networkd
 sudo systemctl restart networking
+
+
+#Na de reboot
+# cd FYS
+# sudo rm /etc/resolv.conf
+# sudo cp resolv.conf /etc/
+# sudo sytemctl restart dnsmasq
