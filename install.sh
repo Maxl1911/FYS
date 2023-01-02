@@ -64,7 +64,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apa
 `#Locality Name (eg, city) [Default City]:` Amsterdam
 `#Organization Name (eg, company) [Default Company Ltd]:` FYS
 `#Organizational Unit Name (eg, section) []:`
-`#Common Name (eg, your name or your server's hostname) []:` FYS Team C
+`#Common Name (eg, your name or your server's hostname) []:` wifi.corendon.com
 `#Email Address []:`
 EOF
 
