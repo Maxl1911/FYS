@@ -64,7 +64,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apa
 `#Locality Name (eg, city) [Default City]:` Amsterdam
 `#Organization Name (eg, company) [Default Company Ltd]:` FYS
 `#Organizational Unit Name (eg, section) []:`
-`#Common Name (eg, your name or your server's hostname) []:` wifi.corendon.com
+`#Common Name (eg, your name or your server's hostname) []:` FYS Team C
 `#Email Address []:`
 EOF
 
@@ -146,6 +146,21 @@ sudo systemctl enable networking
 sudo systemctl disable systemd-networkd
 sudo systemctl restart networking
 
+
+
+#########################################
+#               Accesss Point           #
+#########################################
+
+echo "Firewall instalation"
+
+apt-get install ipset ipset-persistent netfilter-persistent
+
+ipset create whitelist hash:ip
+
+iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443
 #########################################
 #               Pyton Venv              #
 #########################################
@@ -179,12 +194,3 @@ systemctl restart apache2
 # Members of the admin group may gain root privileges
 #   %admin ALL=(ALL) ALL
 
-
-
-#apt-get install ipset ipset-persistent netfilter-persistent
-
-#ipset create whitelist hash:ip
-
-#iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT
-#sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80
-#iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443
