@@ -168,11 +168,11 @@ echo "Firewall instalation"
 
 apt-get install ipset ipset-persistent netfilter-persistent
 
-ipset create whitelist hash:ip
+ipset create whitelist hash:ip #Create the whitelist
 
-iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443
+iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT #Checks if ip existst in firewall, when true contiue
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80 # redirect all tcp traffic to the website
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443 # redirect all tcp traffic to the website
 
 
 #########################################
@@ -186,7 +186,7 @@ sudo python3 -m venv venv
 pip install mariadb
 pip install flask
 cd venv/bin/
-wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
+wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py  # Download an actiavte this file for the vnenv so that wsgi can strart it
 
 systemctl restart apache2
 
