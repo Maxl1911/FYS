@@ -142,7 +142,7 @@ cp routed-ap.conf /etc/sysctl.d/
 
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-netfilter-persistent save
+netfilter-persistent save #Save the firewall rules so that it stays persistent after an reboot
 
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 cp dnsmasq.conf /etc/
@@ -171,9 +171,10 @@ apt-get install ipset ipset-persistent netfilter-persistent
 ipset create whitelist hash:ip #Create the whitelist
 
 iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT #Checks if ip existst in firewall, when true contiue
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80 # redirect all tcp traffic to the website
-iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443 # redirect all tcp traffic to the website
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80 # redirect all tcp on port 80 traffic to the website
+iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443 # redirect all tcp port 443 traffic to the website
 
+netfilter-persistent save #Save the firewall rules so that it stays persistent after an reboot
 
 #########################################
 #               Pyton Venv              #
@@ -192,13 +193,17 @@ systemctl restart apache2
 
 
 
-#Na de reboot
+#POST REBOOT COMMANDS
 # cd FYS
 # sudo rm /etc/resolv.conf
 # sudo cp resolv.conf /etc/
 # sudo sytemctl restart dnsmasq
 # sudo apt upgrade -y
 # sudo visudo
+
+
+
+
 
 # Cmnd alias specification
 #   Cmnd_Alias IPSET = /usr/sbin/ipset
