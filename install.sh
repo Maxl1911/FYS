@@ -69,6 +69,18 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apa
 EOF
 
 systemctl restart apache2
+
+
+#########################################
+#             IPset permission          #
+#########################################
+echo "Apache user IPset permission"
+
+
+echo 'Cmnd_Alias IPSET = /usr/sbin/ipset' | sudo EDITOR='tee -a' visudo
+echo 'www-data ALL=(ALL) NOPASSWD: IPSET'  | sudo EDITOR='tee -a' visudo
+
+
 #########################################
 #               MariaDb                 #
 #########################################
@@ -149,7 +161,7 @@ sudo systemctl restart networking
 
 
 #########################################
-#               Accesss Point           #
+#            	 Firewall		        #
 #########################################
 
 echo "Firewall instalation"
@@ -161,6 +173,8 @@ ipset create whitelist hash:ip
 iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEPT
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443
+
+
 #########################################
 #               Pyton Venv              #
 #########################################
