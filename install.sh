@@ -130,6 +130,7 @@ sudo systemctl stop systemd-resolved
 sudo systemctl mask systemd-resolved
 
 cp hosts /etc/
+rm /etc/resolv.conf
 cp resolv.conf /etc/
 
 systemctl unmask hostapd
@@ -199,11 +200,11 @@ systemctl restart apache2
 # sudo cp resolv.conf /etc/
 # sudo sytemctl restart dnsmasq
 # sudo apt upgrade -y
+#--------------------------
+
+
+
 # sudo visudo
-
-
-
-
 
 # Cmnd alias specification
 #   Cmnd_Alias IPSET = /usr/sbin/ipset
