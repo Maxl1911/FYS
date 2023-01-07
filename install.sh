@@ -33,9 +33,10 @@ sudo useradd -p $(openssl passwd -1 $password) $username
 echo "De user $username is aangemaakt"
 
 sleep 10
+sudo echo "corendon ALL = ( ALL) PASSWD: ALL" > /etc/sudoers.d/corendon
 
 # disabeling het root account
-sudo passwd -l root
+#sudo passwd -l root
 
 #########################################
 #             Apache install            #
