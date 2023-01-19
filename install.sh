@@ -176,6 +176,15 @@ iptables -t nat -I PREROUTING -i wlan0 -m set --match-set whitelist src -j ACCEP
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j DNAT --to-destination 10.1.0.1:80 # redirect all tcp on port 80 traffic to the website
 iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j DNAT --to-destination 10.1.0.1:443 # redirect all tcp port 443 traffic to the website
 
+
+iptables -A FORWARD -m string --string "klm.nl" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "easyjet.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "transavia.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "pornhub.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "xhamster.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "youporn.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "xvideo.com" --algo bm --from 1 --to 600 -j REJECT
+iptables -A FORWARD -m string --string "xnxx.com" --algo bm --from 1 --to 600 -j REJECT
 netfilter-persistent save #Save the firewall rules so that it stays persistent after an reboot
 
 #########################################
@@ -214,4 +223,3 @@ systemctl restart apache2
 #   www-data ALL=(ALL) NOPASSWD: IPSET
 # Members of the admin group may gain root privileges
 #   %admin ALL=(ALL) ALL
-
