@@ -8,7 +8,7 @@ from __init__ import *
 
 def db(surname):
     ## makes an variable with connection information of the database.
-    connection = mariadb.connect(user="corendon", password='corendon', host="127.0.0.1", database="Co>
+    connection = mariadb.connect(user="corendon", password='corendon', host="127.0.0.1", database="Corendon")
 
     print(connection) ## Pint the status of the connection
     mycursor = connection.cursor()
